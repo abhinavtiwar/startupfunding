@@ -24,7 +24,7 @@ function App() {
             <Route path="pofile" element={<AdminProfile />} />
           
           </Route>
-          
+          {/* ljdshngd */}
           <Route element={<User />} path="user">
             <Route path="pofile" element={<UserProfile />} />
           
