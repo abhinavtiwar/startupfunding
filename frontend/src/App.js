@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import Main from './components/main';
-import Login from './components/main/Login';
-import Signup from './components/main/Signup';
+import InvestorLogin from './components/main/InvestorLogin';
+import InvestorSignup from './components/main/InvestorSignup';
+import StartupLogin from './components/main/StartupLogin';
+import StartupSignup from './components/main/StartupSignup';
 import Admin from './components/admin';
 import User from './components/user';
 import AdminProfile from './components/admin/Profile';
@@ -16,8 +18,10 @@ function App() {
         <Routes>
 
           <Route element={<Main />} path="main">
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
+            <Route path="Investorlogin" element={<InvestorLogin />} />
+            <Route path="Investorsignup" element={<InvestorSignup />} />
+            <Route path="Startuplogin" element={<StartupLogin />} />
+            <Route path="Startupsignup" element={<StartupSignup />} />
           </Route>
           
           <Route element={<Admin />} path="admin">
