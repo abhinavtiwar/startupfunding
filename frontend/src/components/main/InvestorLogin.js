@@ -1,4 +1,4 @@
-import "./LoginUi.css";
+import "../App.css";
 import profile from "./image/a.png";
 import email from "./image/email.jpg";
 import pass from "./image/pass.png";

@@ -2,10 +2,10 @@
 import { Formik } from "formik";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
-import './Signup.css';
-import c1 from "./images/email.png";
-import msglogo from "./images/msglogo.png";
-import passwordlogo from "../images/passwordlogo.png";
+import '..../App.css';
+import profile from "./image/a.png";
+import email from "./image/email.jpg";
+import pass from "./image/pass.png";
 function InvestorSignup() {
   
   
@@ -50,7 +50,7 @@ function InvestorSignup() {
        <div>
          <div className="imgs">
            <div className="container-image">
-             <img src={c1} alt="profile" className="profile"/>
+             <img src={profile} alt="profile" className="profile"/>
 
            </div>
 
@@ -71,19 +71,19 @@ function InvestorSignup() {
                  {({ values, handleChange, handleSubmit, errors, touched }) => (
                   <form onSubmit={handleSubmit}>
            <div>
-             <img src={msglogo} alt="msglogo" className="email"/>
+             <img src={email} alt="msglogo" className="email"/>
              <input type="text" placeholder="First name" className="name"/>
            </div>
            <div className="second-input">
-             <img src={passwordlogo} alt="password" className="email"/>
+             <img src={pass} alt="password" className="email"/>
              <input type="password" placeholder="Last name" className="name"/>
            </div>
            <div className="second-input">
-             <img src={passwordlogo} alt="password" className="email"/>
+             <img src={pass} alt="password" className="email"/>
              <input type="password" placeholder="email" className="name"/>
            </div>
            <div className="second-input">
-             <img src={passwordlogo} alt="password" className="email"/>
+             <img src={pass} alt="password" className="email"/>
              <input type="password" placeholder="password" className="name"/>
            </div>
           <div className="login-button">
