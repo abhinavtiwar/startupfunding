@@ -91,9 +91,9 @@ function InvestorSignup() {
           <button>Signup</button>
           </div>
            
-          <h3 className="text-center text-muted">
-              Already have an account?  <Link to="/main/InvestorLogin">Login Here</Link>
-            </h3>
+          <h5 className="text-center mt-2">
+              Already have an account?   <Link to="/main/InvestorLogin">Login Here</Link>
+            </h5>
            </form>
            )}
          </Formik>
