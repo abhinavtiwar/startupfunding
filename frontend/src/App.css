@@ -46,10 +46,10 @@
   padding-bottom: 90px;
   background-color: #b9c5f3ac;
 }
-.sub-main {
+.sub-main-Login {
   display: flex;
   justify-content: center;
-  height: 550px;
+  height: 540px;
   width: 35%;
   box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.396);
   padding-top: 30px;
@@ -131,10 +131,10 @@ button{
   justify-content: center;
   height: 650px;
   width: 35%;
-  box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+  box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.293);
   padding-top: 30px;
   border-radius: 60px; 
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.81);
 }
 .imgs {
     padding-top: 20px;
@@ -182,10 +182,10 @@ input{
 }
 
 button{
-    width: 200px;
+    width: 350px;
     height: 50px;
     border-radius: 60px;
-    background-color: #0307fc;
+    background-color: #a509f4;
     color: white;
     font-size: 20px;
     border: none;
@@ -193,11 +193,9 @@ button{
 .login-button{
     padding-top: 25px;
 }
-
+/* 
 .link{
     font-size: 25px;
     font-weight: 400;
-}
- a{
-     color: blue;
- }
+} */
+ 

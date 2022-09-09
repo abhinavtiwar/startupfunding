@@ -1,5 +1,6 @@
 
 import { Formik } from "formik";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 
@@ -90,10 +91,9 @@ function InvestorSignup() {
           <button>Signup</button>
           </div>
            
-            <p className="link">
-              <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a><hr/>
-            </p>
-           
+          <h3 className="text-center text-muted">
+              Already have an account?  <Link to="/main/InvestorLogin">Login Here</Link>
+            </h3>
            </form>
            )}
          </Formik>

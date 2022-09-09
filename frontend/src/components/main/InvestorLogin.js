@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function InvestorLogin() {
   return (
     <div className="main">
-      <div className="sub-main">
+      <div className="sub-main-Login">
         <div>
           <div className="imgs">
             <div className="container-image">
@@ -28,7 +28,7 @@ function InvestorLogin() {
             </div>
 
             <h3 className="text-center text-muted">
-              Don't have an account?<Link to="/main/InvestorSignup">Sign up</Link>
+              Don't have an account?  <Link to="/main/InvestorSignup">Sign up</Link>
             </h3>
           </div>
         </div>
