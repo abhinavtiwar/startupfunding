@@ -8,7 +8,7 @@ import email from "./image/email.jpg";
 import pass from "./image/pass.png";
 function InvestorSignup() {
   
-
+  
     const handleFormSubmit = (formdata) => {
       console.log("Form submitted!!");
       console.log(formdata);
