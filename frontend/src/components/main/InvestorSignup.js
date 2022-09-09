@@ -2,10 +2,13 @@
 import { Formik } from "formik";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
+
 import profile from "./image/a.png";
+import email from "./image/email.jpg";
+import pass from "./image/pass.png";
 function InvestorSignup() {
   
-  
+
     const handleFormSubmit = (formdata) => {
       console.log("Form submitted!!");
       console.log(formdata);
