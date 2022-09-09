@@ -2,7 +2,7 @@
 import { Formik } from "formik";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
-import '..../App.css';
+
 import profile from "./image/a.png";
 import email from "./image/email.jpg";
 import pass from "./image/pass.png";
