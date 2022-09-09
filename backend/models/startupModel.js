@@ -1,9 +1,14 @@
 const {Schema , model} = require("../connection");
 
 const schema = new Schema({
-    name:String,
-    email:String, 
-    password: String
+    title:String,
+    description:String,
+    email:String,
+    thumbnail:String,
+    year:Number,
+    teamInfo:Object,
+    details:Array,
+    createdAt:Date,
 })
  
 module.exports=model("startup",schema);

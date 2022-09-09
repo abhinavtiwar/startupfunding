@@ -10,8 +10,10 @@ const io = new Server(httpServer, {
 
 
 
-const userRouter = require("./routers/userRouter"); //importing
-const utilRouter = require("./routers/util");
+const userRouter = require("./routers/investorRouter"); //importing
+const userRouter = require("./routers/startupRouter"); //importing
+const userRouter = require("./routers/adminRouter"); //importing
+
 const cors = require("cors");
 
 // middleware to convert client json data to javascript
