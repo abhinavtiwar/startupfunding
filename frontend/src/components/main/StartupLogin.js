@@ -59,7 +59,7 @@ const Login = () => {
         <div className="col-md-3">
           <div className="card">
            
-              <img src="http://tzunami.com/wp-content/uploads/2020/08/Zunami.gif" className="profile mt-3 m-auto"/>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Amino_icon.jpg" className="profile mt-3 m-auto"/>
             
             <div className="card-body">
               <h3 className="text-muted text-center">Startup Log In</h3>
