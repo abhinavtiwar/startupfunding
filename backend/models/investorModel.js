@@ -3,7 +3,7 @@ const {Schema , model} = require("../connection");
 const schema=new Schema({
     fname:String,
     lname:String,
-    email:String,
+    Email:String,
     contact:String,
     age:String,
     password:String,

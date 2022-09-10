@@ -8,7 +8,7 @@ router.post('/add',(req,res) =>{
    // res.send("request processed in user router");
    
     //create operation of crud
-    new Model(formdata).save()
+    new Model(formdata).save() 
     .then((result) => {//shortcut used is thenc
         console.log("data sucessfully saved");
         res.json(result);
@@ -17,18 +17,6 @@ router.post('/add',(req,res) =>{
         res.json(err);
     });
   });
-    //to fetch all the users data
-    router.get('/getall',(req,res)=>{
-        Model.find({})
-        .then((result) => {
-            console.log("user data fetched");
-            res.json(result); 
-        })
-        .catch((err) => {
-            console.error(err); 
-            res.json(err);   
-        });
-    })
     
 
 // for login page

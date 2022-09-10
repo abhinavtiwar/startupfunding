@@ -5,16 +5,16 @@ const port = 5000;
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: { origin: ["http://localhost:3000"] },
+  cors: { origin: ["http://localhost:3000"] }, 
 });
 
 
 
-const userRouter = require("./routers/investorRouter"); //importing
-const userRouter = require("./routers/startupRouter"); //importing
-const userRouter = require("./routers/adminRouter"); //importing
+const startupRouter = require("./routers/investorRouter"); //importing
+const investorRouter = require("./routers/startupRouter"); //importing
+const adminRouter = require("./routers/adminRouter"); //importing
 
-const cors = require("cors");
+const cors = require("cors");  
 
 // middleware to convert client json data to javascript
 app.use(express.json());
@@ -22,7 +22,9 @@ app.use(express.json());
 app.use(cors({ origin: ["http://localhost:3000"] }));
 
 //middleware
-app.use("/user", userRouter);
+app.use("/startup", startupRouter);
+app.use("/investor", investorRouter);
+app.use("/admin", adminRouter);
 
 //starting the server
 httpServer.listen(port, () => {

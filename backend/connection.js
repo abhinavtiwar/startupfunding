@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const url=`mongodb+srv://AbhinavT:<7237862703>@cluster0.mf0s0jk.mongodb.net/test`;
+const url=`mongodb+srv://AbhinavT:7237862703@cluster0.mf0s0jk.mongodb.net/test`;
 
 // it will return promise
 mongoose.connect(url)

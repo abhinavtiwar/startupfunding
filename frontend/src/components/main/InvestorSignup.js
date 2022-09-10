@@ -13,7 +13,7 @@ function InvestorSignup() {
       console.log("Form submitted!!");
       console.log(formdata);
   
-      fetch('http://localhost:5000/user/add', {
+      fetch('http://localhost:5000/investor/add', {
         method: 'POST',
         body : JSON.stringify(formdata),
         headers: {
@@ -60,10 +60,14 @@ function InvestorSignup() {
            <h1>Signup Page</h1>
            <Formik
                 initialValues={{
-                firstname  : "",  
-                lastname  : "",  
-                email: "",
-                  password: "",
+                  fname:"",
+                  lname:"",
+                  Email:"",
+                  contact:"",
+                  age:"",
+                  password:"",
+                  aadhar:"",
+                  createdAt:new Date()
                    }} //specifying initial value for form
                 onSubmit={handleFormSubmit} // function to handle form submission
                 // validationSchema={loginSchema}
@@ -72,19 +76,31 @@ function InvestorSignup() {
                   <form onSubmit={handleSubmit}>
            <div>
              <img src={email} alt="msglogo" className="email"/>
-             <input type="text" placeholder="First name" className="name"/>
+             <input type="text" placeholder="First name" className="fname"/>
+           </div>
+           <div>
+             <img src={email} alt="msglogo" className="email"/>
+             <input type="text" placeholder="Last name" className="lname"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="password" placeholder="Last name" className="name"/>
+             <input type="number" placeholder="contact" className="contact"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="password" placeholder="email" className="name"/>
+             <input type="password" placeholder="email" className="Email"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="password" placeholder="password" className="name"/>
+             <input type="number" placeholder="Age" className="age"/>
+           </div>
+           <div className="second-input">
+             <img src={pass} alt="password" className="email"/>
+             <input type="password" placeholder="Password" className=""/>
+           </div>
+           <div className="second-input">
+             <img src={pass} alt="password" className="email"/>
+             <input type="number" placeholder="Aadhar" className="aadhar"/>
            </div>
           <div className="login-button">
           <button>Signup</button>
