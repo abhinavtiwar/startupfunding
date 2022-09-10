@@ -30,6 +30,11 @@ const Header = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {/* Link */}
             <li className="nav-item">
+              <NavLink className="nav-link" to="/main/home">
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to="/main/startuplogin">
                 Startup Login
               </NavLink>
