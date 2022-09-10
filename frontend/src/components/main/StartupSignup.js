@@ -73,7 +73,7 @@ function StartupSignup () {
               >
                  {({ values, handleChange, handleSubmit, errors, touched }) => (
                   <form onSubmit={handleSubmit}>
-           <div>
+           <div className="second-input">
              <img src={email} alt="msglogo" className="email"/>
              <input type="text" placeholder="Title" className="title"/>
            </div>
