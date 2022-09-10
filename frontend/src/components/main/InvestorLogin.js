@@ -80,6 +80,9 @@ function InvestorLogin() {
               helperText={touched.password ? errors.password : ""} 
               className="name mt-1" />
             </div>
+            <h6> 
+                    <Link to="/main/reset">Reset Password</Link>
+                    </h6>
             <div className="login-button mt-2">
             <Button
             type="submit"

@@ -76,7 +76,7 @@
   border-radius: 130px;
 } 
 
-/* input{
+ input{
     width: 500px;
     height: 50px;
     border-radius: 60px;
@@ -84,7 +84,7 @@
     border: none;
     outline: none;
     background-color: #fff; 
-} */
+} 
 
 .email{
     height: 25px;
@@ -93,10 +93,10 @@
     padding: 14px 0 0 25px;
 }
 
-/* .name{
+ .name{
     padding-left: 0px;
     font-size: 20px;
-} */
+} 
 .second-input{
     padding-top: 20px;
 }
