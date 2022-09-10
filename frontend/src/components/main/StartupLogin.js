@@ -96,7 +96,9 @@ const Login = () => {
                       error={Boolean(errors.password) && touched.password}
                       helperText={touched.password ? errors.password : ""}
                     />
-                     <h6 className="text-muted ">Forgot password?</h6>
+                      <h6> 
+                    <Link to="/main/reset">Reset Password</Link>
+                    </h6>
 
                     <Button
                       type="submit"
@@ -107,7 +109,7 @@ const Login = () => {
                       Login
                     </Button>
                     <h6 className="text-center"> 
-                    Don't have an account?<Link to="/Signup">Sign up</Link>
+                    Don't have an account?<Link to="/main/StartupSignup">Sign up</Link>
                     </h6>
                   </form>
                 )}
