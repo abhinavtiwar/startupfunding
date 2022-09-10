@@ -63,7 +63,7 @@ function InvestorSignup() {
                 initialValues={{
                   fname:"",
                   lname:"",
-                  Email:"",
+                  email:"",
                   contact:"",
                   age:"",
                   password:"",
@@ -89,7 +89,7 @@ function InvestorSignup() {
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="password" placeholder="email" className="Email"/>
+             <input type="email" placeholder="email" className="Email"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
