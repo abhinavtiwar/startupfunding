@@ -130,12 +130,12 @@ button{
 .sub-main {
   display: flex;
   justify-content: center;
-  height: 650px;
+  height: auto;
   width: 35%;
-  box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.293);
+  box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.396);
   padding-top: 30px;
   border-radius: 60px; 
-  background-color: rgba(255, 255, 255, 0.81);
+  background-color: rgba(255, 255, 255, 0.77);
 }
 .imgs {
     padding-top: 20px;
