@@ -79,7 +79,7 @@ function InvestorSignup() {
              <img src={email} alt="msglogo" className="email"/>
              <input type="text" placeholder="First name" className="fname"/>
            </div>
-           <div>
+           <div className="second-input">
              <img src={email} alt="msglogo" className="email"/>
              <input type="text" placeholder="Last name" className="lname"/>
            </div>

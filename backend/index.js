@@ -7,11 +7,11 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: { origin: ["http://localhost:3000"] }, 
 });
+ 
 
 
-
-const startupRouter = require("./routers/investorRouter"); //importing
-const investorRouter = require("./routers/startupRouter"); //importing
+const startupRouter = require("./routers/startupRouter"); //importing
+const investorRouter = require("./routers/investorRouter"); //importing
 const adminRouter = require("./routers/adminRouter"); //importing
 
 const cors = require("cors");  

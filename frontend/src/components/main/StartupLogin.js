@@ -14,7 +14,7 @@ const Login = () => {
     console.log("Form submitted!!");
     console.log(formdata);
 
-    fetch('http://localhost:5000/user/authenticate', {
+    fetch('http://localhost:5000/startup/authenticate', {
       method: 'POST',
       body : JSON.stringify(formdata),
       headers: {

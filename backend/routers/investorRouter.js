@@ -8,9 +8,9 @@ router.post('/add',(req,res) =>{
    // res.send("request processed in user router");
    
     //create operation of crud
-    new Model(formdata).save() 
+    new Model(formdata).save()   
     .then((result) => {//shortcut used is thenc
-        console.log("data sucessfully saved");
+        console.log("data sucessfully saved in investor ");
         res.json(result);
     }).catch((err) => {
         console.error(err);
