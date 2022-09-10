@@ -1,4 +1,6 @@
 import React from 'react'
+import myimg from "./image/maj.jpg";
+import sak from "./image/sak.jpg";
 
 const Home = () => {
   return (
@@ -497,7 +499,7 @@ const Home = () => {
                   >
                     {" "}
                     <img
-                      src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                      src={myimg}
                       className="rounded-circle shadow-5-strong"
                       alt=""
                       style={{ width: 150, height: 150 }}
@@ -505,8 +507,8 @@ const Home = () => {
                     />
                   </div>
                   <div className="card-body">
-                    <h5 className="fw-bold">Maria Smith</h5>
-                    <p className="text-muted">Frontend Developer</p>
+                    <h5 className="fw-bold">Abhinav Tiwari</h5>
+                    <p className="text-muted">Full Stack Developer</p>
                     <ul className="list-unstyled mb-0">
                       {" "}
                       <a href="#!" className="px-1">
@@ -539,7 +541,7 @@ const Home = () => {
                   >
                     {" "}
                     <img
-                      src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                      src={sak}
                       className="rounded-circle shadow-5-strong"
                       alt=""
                       style={{ width: 150, height: 150 }}
@@ -547,8 +549,8 @@ const Home = () => {
                     />
                   </div>
                   <div className="card-body">
-                    <h5 className="fw-bold">Darren Randolph</h5>
-                    <p className="text-muted">Marketing expert</p>
+                    <h5 className="fw-bold">Sakshi</h5>
+                    <p className="text-muted">Frontend Developer</p>
                     <ul className="list-unstyled mb-0">
                       {" "}
                       <a href="#!" className="px-1">

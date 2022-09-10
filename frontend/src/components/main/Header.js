@@ -49,6 +49,16 @@ const Header = () => {
                 Investor SignUp
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/main/contact">
+               Contact Us
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/main/home">
+               Home
+              </NavLink>
+            </li>
            
           
             
