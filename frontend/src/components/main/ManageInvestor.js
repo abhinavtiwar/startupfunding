@@ -11,8 +11,7 @@ const ManageInvestor = () => {
   // to track data loading
   const [loading, setLoading] = useState(true);
 
-  const nums = [43, 23, 4, 5, 323, 34, 5, 65, 4, 34];
-
+  
   const getDataFromBackend = () => {
     fetch("http://localhost:5000/investor/getall").then((res) => {
       if (res.status === 200) {
@@ -45,7 +44,7 @@ const ManageInvestor = () => {
   const deleteUser = (id) => {
     console.log(id);
 
-    fetch("http://localhost:5000/user/delete/" + id, {
+    fetch("http://localhost:5000/investor/delete/" + id, {
       method: "DELETE",
     }).then((res) => {
       if (res.status === 200) {

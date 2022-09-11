@@ -11,12 +11,12 @@ const ManageStartup = () => {
   // to track data loading
   const [loading, setLoading] = useState(true);
 
-  const nums = [43, 23, 4, 5, 323, 34, 5, 65, 4, 34];
+  
 
   const getDataFromBackend = () => {
-    fetch("http://localhost:5000/user/getall").then((res) => {
+    fetch("http://localhost:5000/startup/getall").then((res) => {
       if (res.status === 200) {
-        console.log("data fetched");
+        console.log(" Start Up data fetched");
         res.json().then((data) => {
           console.log(data);
           setUserArray(data);
@@ -30,22 +30,11 @@ const ManageStartup = () => {
     getDataFromBackend();
   }, []);
 
-  // const displayData = () => {
-  //   if(!loading){
-  //     return nums.map( (n) => (
-  //       <div className="card mt-4 bg-warning">
-  //         <div className="card-body">
-  //           <h1>{n}</h1>
-  //           </div>
-  //       </div>
-  //     ) )
-  //   }
-  // }
-
+  
   const deleteUser = (id) => {
     console.log(id);
 
-    fetch("http://localhost:5000/user/delete/" + id, {
+    fetch("http://localhost:5000/startup/delete/" + id, {
       method: "DELETE",
     }).then((res) => {
       if (res.status === 200) {

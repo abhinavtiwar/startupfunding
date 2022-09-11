@@ -18,6 +18,37 @@ router.post('/add',(req,res) =>{
     });
   });
     
+  
+//this is used for feched all user data
+router.get("/getall", (req, res) => {
+  Model.find({})
+    .then((result) => {
+      console.log("Start up data fetched");
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error("error");
+      res.json(err);
+    });
+});
+
+router.delete("/delete/:id", (req, res) => {
+  Model.findByIdAndDelete(req.params.id)
+    .then((result) => {
+      console.log(result);
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.json(err);
+    });
+});
+
+router.get("/getbyid/:id", (req, res) => {
+  console.log(req.params.id); //this is used to get data when data is in url from (GET). for body data(POST) used req.body
+  res.send("responce from getbyid");
+});
+
 
 // for login page
 router.post( '/authenticate', (req, res) => {

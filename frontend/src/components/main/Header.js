@@ -11,7 +11,7 @@ const Header = () => {
       <div className="container-fluid">
         {/* Navbar brand */}
         <a className="navbar-brand" href="#">
-          Brand
+         <img src="https://img.freepik.com/premium-vector/startup-logo-business-project-business-concept-identity-symbol_136321-649.jpg?w=2000" height={40}/>
         </a>
         {/* Toggle button */}
         <button
@@ -59,15 +59,7 @@ const Header = () => {
                Contact Us
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/main/home">
-               Home
-              </NavLink>
-            </li>
-           
           
-            
-           
           </ul>
           {/* Icons */}
           <ul className="navbar-nav d-flex flex-row me-1">
