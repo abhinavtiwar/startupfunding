@@ -11,6 +11,7 @@ import User from './components/user';
 import AdminProfile from './components/admin/Profile';
 import UserProfile from './components/user/Profile';
 import ResetPassword from './components/main/ResetPassword';
+import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
 import ManageInvestor from './components/main/ManageInvestor';
 import ManageStartup from './components/main/ManageStartup';
@@ -27,6 +28,7 @@ function App() {
             <Route path="Startuplogin" element={<StartupLogin />} />
             <Route path="Startupsignup" element={<StartupSignup />} />
             <Route path="reset" element={<ResetPassword />} />
+            <Route path="contact" element={<ContactUs />} />
             <Route path="home" element={<Home/>} />
             <Route path="manageinvestor" element={<ManageInvestor/>} />
             <Route path="managestartup" element={<ManageStartup/>} />

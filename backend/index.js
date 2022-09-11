@@ -13,6 +13,7 @@ const io = new Server(httpServer, {
 const startupRouter = require("./routers/startupRouter"); //importing
 const investorRouter = require("./routers/investorRouter"); //importing
 const adminRouter = require("./routers/adminRouter"); //importing
+const contactRouter = require("./routers/contactRouter"); //importing
 
 const cors = require("cors");  
 
@@ -25,6 +26,7 @@ app.use(cors({ origin: ["http://localhost:3000"] }));
 app.use("/startup", startupRouter);
 app.use("/investor", investorRouter);
 app.use("/admin", adminRouter);
+app.use("/contact", contactRouter);
 
 //starting the server
 httpServer.listen(port, () => {
