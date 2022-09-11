@@ -12,6 +12,8 @@ import AdminProfile from './components/admin/Profile';
 import UserProfile from './components/user/Profile';
 import ResetPassword from './components/main/ResetPassword';
 import Home from './components/main/Home';
+import ManageInvestor from './components/main/ManageInvestor';
+import ManageStartup from './components/main/ManageStartup';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="Startupsignup" element={<StartupSignup />} />
             <Route path="reset" element={<ResetPassword />} />
             <Route path="home" element={<Home/>} />
+            <Route path="manageinvestor" element={<ManageInvestor/>} />
+            <Route path="managestartup" element={<ManageStartup/>} />
           </Route>
           
           <Route element={<Admin />} path="admin">
