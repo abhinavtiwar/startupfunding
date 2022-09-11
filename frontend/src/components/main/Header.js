@@ -59,15 +59,7 @@ const Header = () => {
                Contact Us
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/main/home">
-               Home
-              </NavLink>
-            </li>
-           
-          
-            
-           
+     
           </ul>
           {/* Icons */}
           <ul className="navbar-nav d-flex flex-row me-1">
