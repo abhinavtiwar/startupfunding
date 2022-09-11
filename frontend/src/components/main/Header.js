@@ -11,7 +11,7 @@ const Header = () => {
       <div className="container-fluid">
         {/* Navbar brand */}
         <a className="navbar-brand" href="#">
-         <img src="https://img.freepik.com/premium-vector/startup-logo-business-project-business-concept-identity-symbol_136321-649.jpg?w=2000" height={40}/>
+          Brand
         </a>
         {/* Toggle button */}
         <button
