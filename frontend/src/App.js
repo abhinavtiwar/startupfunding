@@ -14,6 +14,7 @@ import ResetPassword from './components/main/ResetPassword';
 import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
 import ManageInvestor from './components/main/ManageInvestor';
+import Listing from './components/main/Listing';
 import ManageStartup from './components/main/ManageStartup';
 
 function App() {
@@ -32,9 +33,10 @@ function App() {
             <Route path="home" element={<Home/>} />
             <Route path="manageinvestor" element={<ManageInvestor/>} />
             <Route path="managestartup" element={<ManageStartup/>} />
+            <Route path="listing" element={<Listing/>} />
           </Route>
           
-          <Route element={<Admin />} path="admin">
+          <Route element={<Admin />} path="admin"> 
             <Route path="pofile" element={<AdminProfile />} />
           
           </Route>

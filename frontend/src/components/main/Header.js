@@ -69,6 +69,11 @@ const Header = () => {
                ManageStartup
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/main/listing">
+              Listing
+              </NavLink>
+            </li>
           
           </ul>
           {/* Icons */}
