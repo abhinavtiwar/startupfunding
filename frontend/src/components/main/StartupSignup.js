@@ -54,9 +54,8 @@ function StartupSignup() {
             <Formik
               initialValues={{
                 title: "",
-                description: "",
                 email: "",
-                thumbnail: "",
+                password:"",
                 year: "",
                 teamInfo: Object,
                 details: Array,
@@ -69,39 +68,23 @@ function StartupSignup() {
                 <form onSubmit={handleSubmit}>
                   <div className="second-input">
                     <img src={email} alt="msglogo" className="email" />
-                    <input type="text" placeholder="Title" className="title" />
-                  </div>
-                  <div className="second-input">
-                    <img src={email} alt="msglogo" className="email" />
-                    <input
-                      type="text"
-                      placeholder="Description"
-                      className="description"
-                    />
+                    <input type="text" id="title"   onChange={handleChange} placeholder="Title" className="title" />
                   </div>
                   <div className="second-input">
                     <img src={pass} alt="password" className="email" />
-                    <input
-                      type="text"
-                      placeholder="Thumbnail"
-                      className="thumbnail"
-                    />
+                    <input type="email" id="email"   onChange={handleChange} placeholder="email" className="Email" />
                   </div>
                   <div className="second-input">
                     <img src={pass} alt="password" className="email" />
-                    <input type="email" placeholder="email" className="Email" />
+                    <input type="Password" id="password"   onChange={handleChange} placeholder="Password" className="password" />
                   </div>
                   <div className="second-input">
                     <img src={pass} alt="password" className="email" />
-                    <input type="number" placeholder="Age" className="age" />
-                  </div>
-                  <div className="second-input">
-                    <img src={pass} alt="password" className="email" />
-                    <input type="number" placeholder="Year" className="year" />
+                    <input type="number" id="year"  onChange={handleChange} placeholder="Year" className="year" />
                   </div>
 
                   <div className="login-button">
-                    <button>Signup</button>
+                    <button type="Submit">Signup</button>
                   </div>
 
                   <h5 className="text-center mt-2">

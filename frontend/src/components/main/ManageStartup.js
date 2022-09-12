@@ -51,9 +51,9 @@ const ManageStartup = () => {
 
   const displayUsers = () => {
     if (!loading) {
-      return userArray.map(({ _id, name, email, password }) => (
+      return userArray.map(({ _id, title, email, password, year }) => (
         <tr>
-          <td>{name}</td>
+          <td>{title}</td>
           <td>{email}</td>
           <td>{password}</td>
           <td>
@@ -62,7 +62,7 @@ const ManageStartup = () => {
             </button>
           </td>
           <td>
-            <button className="btn btn-primary" onClick={e => updateUser({_id, name, email, password})} >
+            <button className="btn btn-primary" onClick={e => updateUser({_id, title, email, password})} >
               <i class="fas fa-pen"></i>
             </button>
           </td>
@@ -78,7 +78,7 @@ const ManageStartup = () => {
           <table className="table table-dark">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Title</th>
                 <th>Email</th>
                 <th>Password</th>
                 <th></th>

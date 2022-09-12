@@ -4,6 +4,7 @@ const schema = new Schema({
     title:String,
     description:String,
     email:String,
+    password:String,
     thumbnail:String,
     year:Number,
     teamInfo:Object,
