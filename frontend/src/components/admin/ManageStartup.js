@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import UpdateUser from "./UpdateUser";
+import UpdateStartup from "./UpdateStartup";
 
 const ManageStartup = () => {
-  const [userFormData, setUserFormData] = useState(null);
+  const [startupFormData, setStartupFormData] = useState(null);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
 
   // for storing the user data
-  const [userArray, setUserArray] = useState([]);
+  const [startupArray, setStartupArray] = useState([]);
 
   // to track data loading
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const ManageStartup = () => {
         console.log(" Start Up data fetched");
         res.json().then((data) => {
           console.log(data);
-          setUserArray(data);
+          setStartupArray(data);
           setLoading(false);
         });
       }
@@ -31,7 +31,7 @@ const ManageStartup = () => {
   }, []);
 
   
-  const deleteUser = (id) => {
+  const deleteStartup = (id) => {
     console.log(id);
 
     fetch("http://localhost:5000/startup/delete/" + id, {
@@ -44,25 +44,25 @@ const ManageStartup = () => {
     });
   };
 
-  const updateUser = (userdata) => {
+  const updateStartup = (startupdata) => {
     setShowUpdateForm(true);
-    setUserFormData(userdata);
+    setStartupFormData(startupdata);
   };
 
-  const displayUsers = () => {
+  const displayStartup = () => {
     if (!loading) {
-      return userArray.map(({ _id, title, email, password, year }) => (
+      return startupArray.map(({ _id, title, email, password, year }) => (
         <tr>
           <td>{title}</td>
           <td>{email}</td>
           <td>{password}</td>
           <td>
-            <button className="btn btn-danger" onClick={(e) => deleteUser(_id)}>
+            <button className="btn btn-danger" onClick={(e) => deleteStartup(_id)}>
               <i class="fas fa-trash"></i>
             </button>
           </td>
           <td>
-            <button className="btn btn-primary" onClick={e => updateUser({_id, title, email, password})} >
+            <button className="btn btn-primary" onClick={e => updateStartup({_id, title, email, password})} >
               <i class="fas fa-pen"></i>
             </button>
           </td>
@@ -85,10 +85,10 @@ const ManageStartup = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>{displayUsers()}</tbody>
+            <tbody>{displayStartup()}</tbody>
           </table>
         </div>
-        {/* {showUpdateForm ? <div className="col-md">{<UpdateUser userFormData={userFormData}  fetchData = {getDataFromBackend} setShowUpdateForm={setShowUpdateForm} />}</div> : ""} */}
+        {showUpdateForm ? <div className="col-md">{<UpdateStartup startupFormData={startupFormData}  fetchData = {getDataFromBackend} setShowUpdateForm={setShowUpdateForm} />}</div> : ""}
       </div>
     </div>
   );
