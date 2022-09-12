@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import UpdateInvestor from "./UpdateInvestor";
+import UpdateInvestor from "./UpdateInvestor";
 
 const ManageInvestor = () => {
   const [investorFormData, setinvestorFormData] = useState(null);
@@ -54,9 +54,9 @@ const ManageInvestor = () => {
     });
   };
 
-  const updateInvestor = (userdata) => {
+  const updateInvestor = (investordata) => {
     setShowUpdateForm(true);
-    setinvestorFormData(userdata);
+    setinvestorFormData(investordata);
   };
 
   const displayInvestors = () => {
@@ -98,7 +98,7 @@ const ManageInvestor = () => {
             <tbody>{displayInvestors()}</tbody>
           </table>
         </div>
-        {/* {showUpdateForm ? <div className="col-md">{<UpdateUser userFormData={userFormData}  fetchData = {getDataFromBackend} setShowUpdateForm={setShowUpdateForm} />}</div> : ""} */}
+        {showUpdateForm ? <div className="col-md">{<UpdateInvestor investorFormData={investorFormData}  fetchData = {getDataFromBackend} setShowUpdateForm={setShowUpdateForm} />}</div> : ""}
       </div>
     </div>
   );

@@ -13,8 +13,8 @@ import UserProfile from './components/user/Profile';
 import ResetPassword from './components/main/ResetPassword';
 import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
-import ManageInvestor from './components/main/ManageInvestor';
-import ManageStartup from './components/main/ManageStartup';
+import ManageInvestor from './components/admin/ManageInvestor';
+import ManageStartup from './components/admin/ManageStartup';
 
 function App() {
   return (
@@ -36,6 +36,8 @@ function App() {
           
           <Route element={<Admin />} path="admin">
             <Route path="pofile" element={<AdminProfile />} />
+            <Route path="manageinvestor" element={<ManageInvestor/>} />
+            <Route path="managestartup" element={<ManageStartup/>} />
           
           </Route>
           {/* ljdshngd */}

@@ -68,7 +68,18 @@ router.post( '/authenticate', (req, res) => {
   });
 })
 
-
+router.put("/update/:id", (req, res) => {
+  const formdata = req.body;
+  //to find the entry by id and update with formdata
+  Model.findByIdAndUpdate(req.params.id, formdata)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error("error");
+      res.json(err);
+    });
+});
 
   // to find the entry by id and update with formdat
 module.exports=router;
