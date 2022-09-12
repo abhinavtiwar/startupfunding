@@ -10,8 +10,8 @@ const Header = () => {
       {/* Container wrapper */}
       <div className="container-fluid">
         {/* Navbar brand */}
-        <a className="navbar-brand" href="#">
-          Brand
+        <a className="navbar-brand" href="/main/home">
+         <img src="https://businessdeccan.com/wp-content/uploads/2021/03/logo-1933884_640.png" height="40"/>
         </a>
         {/* Toggle button */}
         <button
@@ -57,6 +57,16 @@ const Header = () => {
             <li className="nav-item">
               <NavLink className="nav-link" to="/main/contact">
                Contact Us
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/main/manageinvestor">
+               ManageInvestor
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/main/managestartup">
+               ManageStartup
               </NavLink>
             </li>
           
