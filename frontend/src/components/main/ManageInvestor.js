@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import UpdateUser from "./UpdateUser";
+// import UpdateInvestor from "./UpdateInvestor";
 
 const ManageInvestor = () => {
-  const [userFormData, setUserFormData] = useState(null);
+  const [investorFormData, setinvestorFormData] = useState(null);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
 
   // for storing the user data
-  const [userArray, setUserArray] = useState([]);
+  const [investorArray, setInvestorArray] = useState([]);
 
   // to track data loading
   const [loading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ const ManageInvestor = () => {
         console.log("data fetched");
         res.json().then((data) => {
           console.log(data);
-          setUserArray(data);
+          setInvestorArray(data);
           setLoading(false);
         });
       }
@@ -41,7 +41,7 @@ const ManageInvestor = () => {
   //   }
   // }
 
-  const deleteUser = (id) => {
+  const deleteInvestor = (id) => {
     console.log(id);
 
     fetch("http://localhost:5000/investor/delete/" + id, {
@@ -54,25 +54,25 @@ const ManageInvestor = () => {
     });
   };
 
-  const updateUser = (userdata) => {
+  const updateInvestor = (userdata) => {
     setShowUpdateForm(true);
-    setUserFormData(userdata);
+    setinvestorFormData(userdata);
   };
 
-  const displayUsers = () => {
+  const displayInvestors = () => {
     if (!loading) {
-      return userArray.map(({ _id, name, email, password }) => (
+      return investorArray.map(({ _id, fname, lname, email, password }) => (
         <tr>
-          <td>{name}</td>
+          <td>{fname +" "+lname}</td>
           <td>{email}</td>
           <td>{password}</td>
           <td>
-            <button className="btn btn-danger" onClick={(e) => deleteUser(_id)}>
+            <button className="btn btn-danger" onClick={(e) => deleteInvestor(_id)}>
               <i class="fas fa-trash"></i>
             </button>
           </td>
           <td>
-            <button className="btn btn-primary" onClick={e => updateUser({_id, name, email, password})} >
+            <button className="btn btn-primary" onClick={e => updateInvestor({_id, fname, lname, email, password})} >
               <i class="fas fa-pen"></i>
             </button>
           </td>
@@ -95,7 +95,7 @@ const ManageInvestor = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>{displayUsers()}</tbody>
+            <tbody>{displayInvestors()}</tbody>
           </table>
         </div>
         {/* {showUpdateForm ? <div className="col-md">{<UpdateUser userFormData={userFormData}  fetchData = {getDataFromBackend} setShowUpdateForm={setShowUpdateForm} />}</div> : ""} */}

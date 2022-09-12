@@ -1,4 +1,5 @@
 import { Formik } from "formik";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 
@@ -6,8 +7,6 @@ import profile from "./image/a.png";
 import email from "./image/email.jpg";
 import pass from "./image/pass.png";
 function StartupSignup() {
-
-  
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
@@ -105,10 +104,10 @@ function StartupSignup() {
                     <button>Signup</button>
                   </div>
 
-                  <p className="link">
-                    <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a>
-                    <hr />
-                  </p>
+                  <h5 className="text-center mt-2">
+                    Already have an account?{" "}
+                    <Link to="/main/StartupLogin">Login Here</Link>
+                  </h5>
                 </form>
               )}
             </Formik>

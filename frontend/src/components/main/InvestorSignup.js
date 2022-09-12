@@ -77,34 +77,34 @@ function InvestorSignup() {
                   <form onSubmit={handleSubmit}>
            <div>
              <img src={email} alt="msglogo" className="email"/>
-             <input type="text" placeholder="First name" className="fname"/>
+             <input type="text" id="fname"  onChange={handleChange} placeholder="First name" className="fname"/>
            </div>
            <div className="second-input">
              <img src={email} alt="msglogo" className="email"/>
-             <input type="text" placeholder="Last name" className="lname"/>
+             <input type="text" id="lname"  onChange={handleChange} placeholder="Last name" className="lname"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="number" placeholder="contact" className="contact"/>
+             <input type="number" id="contact"  onChange={handleChange} placeholder="contact" className="contact"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="email" placeholder="email" className="Email"/>
+             <input type="email" id="email"  onChange={handleChange} placeholder="email" className="Email"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="number" placeholder="Age" className="age"/>
+             <input type="number" id="age"  onChange={handleChange} placeholder="Age" className="age"/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="password" placeholder="Password" className=""/>
+             <input type="password" id="password"  onChange={handleChange} placeholder="Password" className=""/>
            </div>
            <div className="second-input">
              <img src={pass} alt="password" className="email"/>
-             <input type="number" placeholder="Aadhar" className="aadhar"/>
+             <input type="number" id="aadhar"  onChange={handleChange} placeholder="Aadhar" className="aadhar"/>
            </div>
           <div className="login-button">
-          <button>Signup</button>
+          <button type="Submit">Signup</button>
           </div>
            
           <h5 className="text-center mt-2">
