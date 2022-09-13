@@ -13,15 +13,11 @@ import UserProfile from './components/user/Profile';
 import ResetPassword from './components/main/ResetPassword';
 import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
-<<<<<<< HEAD
-import ManageInvestor from './components/main/ManageInvestor';
-import Listing from './components/main/Listing';
-import ManageStartup from './components/main/ManageStartup';
-=======
 import ManageInvestor from './components/admin/ManageInvestor';
+import Listing from './components/main/Listing';
 import ManageStartup from './components/admin/ManageStartup';
->>>>>>> ba67d026cdc797bcb81a5459129097a5ac94f3aa
-
+import StartupProfile from './components/main/StartupProfile';
+import StartupAuthorisor from './startupAuth';
 function App() {
   return (
     <div>
@@ -36,8 +32,11 @@ function App() {
             <Route path="reset" element={<ResetPassword />} />
             <Route path="contact" element={<ContactUs />} />
             <Route path="home" element={<Home/>} />
-            <Route path="manageinvestor" element={<ManageInvestor/>} />
-            <Route path="managestartup" element={<ManageStartup/>} />
+            <Route path="startupprofile" element={
+              <StartupAuthorisor>
+              <StartupProfile/>
+              </StartupAuthorisor>
+            } />
             <Route path="listing" element={<Listing/>} />
           </Route>
           
