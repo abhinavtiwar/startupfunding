@@ -5,7 +5,7 @@ const Model=require("../models/startupModel");
 router.post('/add',(req,res) =>{
     const formdata=req.body;
      console.log(req.body);//used to get the data in post
-   // res.send("request processed in user router");
+   // res.send("request processed in user router"); 
    
     //create operation of crud
     new Model(formdata).save()

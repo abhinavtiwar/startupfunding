@@ -54,6 +54,7 @@ function StartupSignup() {
             <Formik
               initialValues={{
                 title: "",
+                name: "",
                 email: "",
                 password:"",
                 year: "",
@@ -69,6 +70,10 @@ function StartupSignup() {
                   <div className="second-input">
                     <img src={email} alt="msglogo" className="email" />
                     <input type="text" id="title"   onChange={handleChange} placeholder="Title" className="title" />
+                  </div>
+                  <div className="second-input">
+                    <img src={email} alt="msglogo" className="email" />
+                    <input type="text" id="name"   onChange={handleChange} placeholder="Name" className="name" />
                   </div>
                   <div className="second-input">
                     <img src={pass} alt="password" className="email" />
