@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import * as Yup from "yup";
 // import "./Image.css"
 
-const Login = () => {
+const StartupLogin = () => {
   
   const navigate = useNavigate();
 
@@ -59,7 +59,7 @@ const Login = () => {
         <div className="col-md-3">
           <div className="card">
            
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Amino_icon.jpg" className="profile mt-3 m-auto"/>
+              <img src="https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png" className="profile mt-3 m-auto"/>
             
             <div className="card-body">
               <h3 className="text-muted text-center">Startup Log In</h3>
@@ -122,4 +122,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default StartupLogin;
