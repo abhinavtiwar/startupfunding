@@ -41,8 +41,8 @@ function StartupSignup() {
   });
 
   return (
-    <div className="main">
-      <div className="sub-main">
+    <div className="mains">
+      <div className="sub-mains">
         <div>
           <div className="imgs">
             <div className="container-image">

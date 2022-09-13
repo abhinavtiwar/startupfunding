@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #dde2ec;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,28 +42,32 @@
   text-align: center;
   justify-content: center;
   display: flex; 
-  padding-top: 90px;
+  padding-top: 300px;
   padding-bottom: 90px;
-  background-color: #b9c5f3ac;
+  background-color: white;
+  background-size: cover;
+  height: 100vh;
 }
-.sub-main-Login {
+.sub-main-Logins {
   display: flex;
   justify-content: center;
-  height: 540px;
-  width: 35%;
-  box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.396);
+  height: 75%;
+  width: 25%;
+  box-shadow: 11px 12px 13px 12px rgba(247, 244, 244, 0.396);
   padding-top: 30px;
-  border-radius: 60px; 
-  background-color: rgba(255, 255, 255, 0.77);
+ border-radius: 2px;
+  background-color: rgb(255, 255, 255);
 }
 .imgs {
-    padding-top: 20px;
+    padding-top: 200px;
     justify-content: center;
     display: flex;
+    height:auto;
+    
   }
 .container-image {
   background-color: rgb(223, 221, 221); 
-  border-radius: 150px;
+
   align-items: center;
   display: flex;
   justify-content: center;
@@ -79,7 +83,7 @@
  input{
     width: 500px;
     height: 50px;
-    border-radius: 60px;
+    
     box-shadow: inset 0px 0px 25px 0px #888; 
     border: none;
     outline: none;
@@ -98,20 +102,21 @@
     font-size: 20px;
 } 
 .second-input{
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 button{
-    width: 470px;
+    width: 400px;
     height: 50px;
-    border-radius: 60px;
+ 
     background-color: #b103fc;
     color: white;
     font-size: 25px;
     border: none;
 }
 .login-button{
-    padding-top: 25px;
+    padding-top: 50px;
+    margin-top: auto;
 }
 
 
@@ -124,19 +129,24 @@ button{
   display: flex; 
   padding-top: 80px;
   padding-bottom: 90px;
-  background:url("https://c.tenor.com/gYVMrt3BdWIAAAAM/fxtm-invest-investment-traders.gif");
+  background:url("https://businessinedmonton.com/wp-content/uploads/2018/09/iStock-868434080WEB.jpg");
   background-size: cover;
+  
 }
 .sub-main {
   display: flex;
   justify-content: center;
-  height: auto;
-  width: 35%;
-  box-shadow: 11px 12px 13px 12px rgba(207, 207, 207, 0.396);
+  height: 105%;
+  width: 25%;
+  box-shadow: 11px 12px 13px 12px rgb(119, 117, 117);
   padding-top: 30px;
-  border-radius: 60px; 
-  background-color: rgba(255, 255, 255, 0.77);
+ border-radius: 2px;
+  background-color: rgb(255, 255, 255);
 }
+
+
+
+
 .imgs {
     padding-top: 20px;
     justify-content: center;
@@ -144,7 +154,7 @@ button{
   }
 .container-image {
   background-color: rgb(223, 221, 221); 
-  border-radius: 150px;
+ 
   align-items: center;
   display: flex;
   justify-content: center;
@@ -169,7 +179,6 @@ button{
     font-size: 20px;
     width: 400px;
     height: 50px;
-    border-radius: 40px;
     box-shadow: inset 0px 0px 25px 0px #888;
     border: none;
     outline: none;
@@ -177,19 +186,103 @@ button{
 }
 .second-input{
     padding-top: 20px;
+  
 }
 
 button{
     width: 390px;
     height: 50px;
-    border-radius: 60px;
     background-color: #a509f4;
     color: white;
     font-size: 20px;
     border: none;
+    margin-bottom: 20px;
 }
 .login-button{
     padding-top: 25px;
+    
+}
+/* Startup signup */
+
+.mains {
+  text-align: center;
+  justify-content: center;
+  display: flex; 
+  padding-top: 80px;
+  padding-bottom: 90px;
+  background:url("https://businessinedmonton.com/wp-content/uploads/2018/09/iStock-868434080WEB.jpg");
+  background-size:100%;
+  margin-top: auto;
+  
+}
+.sub-mains {
+  display: flex;
+  justify-content: center;
+  height: 105%;
+  width: 25%;
+  box-shadow: 11px 12px 13px 12px rgb(119, 117, 117);
+  padding-top: 30px;
+ border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+
+.imgs {
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+  }
+.container-image {
+  background-color: rgb(223, 221, 221); 
+ 
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 115px;
+  width: 115px;
+}
+.profile {
+  height: 100px;
+  width: 100px;
+  border-radius: 130px;
+} 
+
+.email{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    padding: 14px 0 0 25px;
+}
+
+.name{
+    padding-left: 20px;
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.second-input{
+    padding-top: 20px;
+  
+}
+
+button{
+    width: 390px;
+    height: 50px;
+    background-color: #a509f4;
+    color: white;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 20px;
+}
+.login-button{
+    padding-top: 25px;
+    
 }
 /* 
 .link{
@@ -198,10 +291,11 @@ button{
 } */
  /*startup*/
  .bgimg{
-  background: url("https://www.rvcj.com/wp-content/uploads/2019/03/gif-startup-rocket.gif");
+  background: url("https://businessinedmonton.com/wp-content/uploads/2018/09/iStock-868434080WEB.jpg");
   background-size: cover;
   background-color: #b9c5f3ac;
  }
+ 
 
  /* contact us */
 
@@ -278,8 +372,44 @@ button{
     padding-top: 20px;
   }
 
-  /* startup profile */
-  .photo {
-    height: 200px;
-    width: 200px;
+
+  /* investor login */
+  .App {
+    text-align: center;
   }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* investor signup */

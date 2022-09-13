@@ -13,6 +13,11 @@ import UserProfile from './components/user/Profile';
 import ResetPassword from './components/main/ResetPassword';
 import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
+
+
+import Listing from './components/main/Listing';
+
+
 import ManageInvestor from './components/admin/ManageInvestor';
 import Listing from './components/main/Listing';
 import ManageStartup from './components/admin/ManageStartup';
@@ -38,6 +43,7 @@ function App() {
               </StartupAuthorisor>
             } />
             <Route path="listing" element={<Listing/>} />
+           
           </Route>
           
           <Route element={<Admin />} path="admin"> 
@@ -45,7 +51,7 @@ function App() {
             <Route path="manageinvestor" element={<ManageInvestor/>} />
             <Route path="managestartup" element={<ManageStartup/>} />
           
-          </Route>
+            </Route>
           {/* ljdshngd */}
           <Route element={<User />} path="user">
             <Route path="pofile" element={<UserProfile />} />
