@@ -47,7 +47,7 @@ function InvestorSignup() {
   
   return (
     <div className="main">
-     <div className="sub-main">
+     <div className="sub-main l">
        <div>
          <div className="imgs">
            <div className="container-image">

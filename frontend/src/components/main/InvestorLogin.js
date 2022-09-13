@@ -1,5 +1,5 @@
 
-import profile from "./image/a.png";
+import loginlogo from "./image/loginlogo.png";
 import {Button } from "@mui/material";
 import { Formik } from "formik";
 import email from "./image/email.jpg";
@@ -44,11 +44,11 @@ function InvestorLogin() {
   });
   return (
     <div className="main">
-      <div className="sub-main-Login">
+      <div className="sub-main-Logins">
         <div>
           <div className="imgs">
             <div className="container-image">
-              <img src={profile} alt="profile" className="profile" />
+              <img src={loginlogo} alt="profile" className="profile" />
             </div>
           </div>
           <div>
