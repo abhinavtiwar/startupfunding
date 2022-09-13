@@ -45,7 +45,7 @@ const StartupProfile = ({ fetchData }) => {
       <div className="contact-box">
         <div className="contact-left">
           <h3>Update Your Profile</h3>
-          <Formik initialValues={startupFormData} onSubmit={handleFormSubmit}>
+          <Formik initialValues={currentUser} onSubmit={handleFormSubmit}>
             {({ values, handleChange, handleSubmit }) => (
               <form onSubmit={handleSubmit}>
                 <div className="input-row">
@@ -136,23 +136,23 @@ const StartupProfile = ({ fetchData }) => {
           <table>
             <tr>
               <td>Title :</td>
-              <td>{startupArray.title}</td>
+              <td>{currentUser.title}</td>
             </tr>
             <tr>
               <td>Name :</td>
-              <td>{startupArray.name}</td>
+              <td>{currentUser.name}</td>
             </tr>
             <tr>
               <td>Phone :</td>
-              <td>{startupArray.phone}</td>
+              <td>{currentUser.phone}</td>
             </tr>
             <tr>
               <td>Email :</td>
-              <td>{startupArray.email}</td>
+              <td>{currentUser.email}</td>
             </tr>
             <tr>
               <td>Year :</td>
-              <td>{startupArray.year}</td>
+              <td>{currentUser.year}</td>
             </tr>
           </table>
         </div>
