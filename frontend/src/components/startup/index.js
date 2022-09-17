@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from '../main/Header'
+import Header from './Header'
 
 const Startup = () => {
   return (
