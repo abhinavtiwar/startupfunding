@@ -7,9 +7,9 @@ import InvestorSignup from './components/main/InvestorSignup';
 import StartupLogin from './components/main/StartupLogin';
 import StartupSignup from './components/main/StartupSignup';
 import Admin from './components/admin';
-import User from './components/user';
+import User from './components/investor';
 import AdminProfile from './components/admin/Profile';
-import UserProfile from './components/user/Profile';
+import UserProfile from './components/investor/Profile';
 import ResetPassword from './components/main/ResetPassword';
 import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
@@ -17,7 +17,7 @@ import Home from './components/main/Home';
 
 import ManageInvestor from './components/admin/ManageInvestor';
 import ManageStartup from './components/admin/ManageStartup';
-import StartupProfile from './components/main/StartupProfile';
+import StartupProfile from './components/startup/StartupProfile';
 import StartupAuthorisor from './startupAuth';
 import Listing from './components/main/Listing';
 function App() {
@@ -26,6 +26,7 @@ function App() {
       <BrowserRouter>
         <Routes>
 
+          <Route element={<Home />} path="/" />
           <Route element={<Main />} path="main">
             <Route path="Investorlogin" element={<InvestorLogin />} />
             <Route path="Investorsignup" element={<InvestorSignup />} />
