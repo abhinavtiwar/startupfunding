@@ -16,10 +16,10 @@ import Home from './components/main/Home';
 
 
 import ManageInvestor from './components/admin/ManageInvestor';
-import Listing from './components/main/Listing';
 import ManageStartup from './components/admin/ManageStartup';
 import StartupProfile from './components/main/StartupProfile';
 import StartupAuthorisor from './startupAuth';
+import Listing from './components/main/Listing';
 function App() {
   return (
     <div>
