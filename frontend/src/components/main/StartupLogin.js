@@ -31,7 +31,7 @@ const StartupLogin = () => {
           console.log(data);
           sessionStorage.setItem('startup', JSON.stringify(data));
         })
-        navigate("/startupprofile");
+        navigate("/startup/startupprofile");
       }
       else if(res.status === 300){
         Swal.fire({
@@ -39,7 +39,7 @@ const StartupLogin = () => {
           title : 'Oops!!',
           text : 'Invalid Credentials or You dont have an account Sing up now'
         })
-       navigate("/Signup");
+       navigate("/startup/Startupsignup");
       }
     })
 
