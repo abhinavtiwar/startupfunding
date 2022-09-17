@@ -23,7 +23,7 @@ const StartupProfile = ({ fetchData }) => {
     }).then((res) => {
       console.log(res.status);
       if (res.status === 200) {
-        fetchData();
+       
         Swal.fire({
           icon: "success",
           title: "Success",
