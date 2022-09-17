@@ -35,11 +35,7 @@ function App() {
             <Route path="reset" element={<ResetPassword />} />
             <Route path="contact" element={<ContactUs />} />
             <Route path="home" element={<Home/>} />
-            <Route path="startupprofile" element={
-              <StartupAuthorisor>
-              <StartupProfile/>
-              </StartupAuthorisor>
-            } />
+            
             <Route path="listing" element={<Listing/>} />
            
           </Route>
@@ -48,6 +44,14 @@ function App() {
             <Route path="pofile" element={<AdminProfile />} />
             <Route path="manageinvestor" element={<ManageInvestor/>} />
             <Route path="managestartup" element={<ManageStartup/>} />
+          
+            </Route>
+          <Route element={<startup />} path="startup"> 
+          <Route path="startupprofile" element={
+            <StartupAuthorisor>
+            <StartupProfile/>
+            </StartupAuthorisor>
+          } />
           
             </Route>
           {/* ljdshngd */}
