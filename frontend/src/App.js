@@ -20,6 +20,7 @@ import ManageStartup from './components/admin/ManageStartup';
 import StartupProfile from './components/startup/StartupProfile';
 import StartupAuthorisor from './startupAuth';
 import Listing from './components/main/Listing';
+import Startup from './components/startup';
 function App() {
   return (
     <div>
@@ -46,7 +47,7 @@ function App() {
             <Route path="managestartup" element={<ManageStartup/>} />
           
             </Route>
-          <Route element={<startup />} path="startup"> 
+          <Route element={<Startup />} path="startup"> 
           <Route path="startupprofile" element={
             <StartupAuthorisor>
             <StartupProfile/>

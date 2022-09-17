@@ -37,14 +37,12 @@ function Listing() {
       if (!loading) {
         return userArray.map(
           ({
-                title: "",
-                email: "",
-                password:"",
-                year: "",
-                teamInfo: Object,
-                details: Array,
-                createdAt: new Date(),
-          })  (
+                title,
+                email,
+                password,
+                year,
+                createdAt,
+          }) =>(
             <div className="col-md-4 col-lg-4 mb-4 mb-lg-0">
               <div className="card">
                 <div className="d-flex justify-content-between p-3">
