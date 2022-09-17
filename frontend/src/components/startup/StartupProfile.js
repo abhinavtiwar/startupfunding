@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import React, { useEffect, useState } from "react";
-import profile from "./image/a.png";
+import profile from "../main/image/a.png";
 import { Formik } from "formik";
 import { Button } from "@mui/material";
 const StartupProfile = ({ fetchData }) => {
