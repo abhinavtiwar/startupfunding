@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Listing() {
+function  Listing() {
   const [userArray, setUserArray] = useState([]);
   const [loading, setLoading] = useState(false);
 
