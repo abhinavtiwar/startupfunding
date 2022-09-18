@@ -38,7 +38,7 @@
 }
 
 /* login css */
-.main {
+/* .main {
   text-align: center;
   justify-content: center;
   display: flex; 
@@ -117,13 +117,13 @@ button{
 .login-button{
     padding-top: 50px;
     margin-top: auto;
-}
+} */
 
 
 /* signup */
 
 
-.main {
+/* .main {
   text-align: center;
   justify-content: center;
   display: flex; 
@@ -201,10 +201,10 @@ button{
 .login-button{
     padding-top: 25px;
     
-}
+} */
 /* Startup signup */
 
-.mains {
+/* .mains {
   text-align: center;
   justify-content: center;
   display: flex; 
@@ -283,7 +283,7 @@ button{
 .login-button{
     padding-top: 25px;
     
-}
+} */
 /* 
 .link{
     font-size: 25px;
@@ -374,7 +374,7 @@ button{
 
 
   /* investor login */
-  .App {
+  /* .App {
     text-align: center;
   }
   
@@ -412,4 +412,4 @@ button{
       transform: rotate(360deg);
     }
   }
-  /* investor signup */
+   */
