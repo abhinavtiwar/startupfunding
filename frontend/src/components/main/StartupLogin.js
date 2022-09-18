@@ -39,7 +39,7 @@ const StartupLogin = () => {
           title : 'Oops!!',
           text : 'Invalid Credentials or You dont have an account Sing up now'
         })
-       navigate("/startup/Startupsignup");
+       navigate("/main/Startupsignup");
       }
     })
 

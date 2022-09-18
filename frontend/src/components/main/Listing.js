@@ -72,7 +72,7 @@ function Listing() {
                   </div>
 
                   <div className="d-flex justify-content-between mb-3">
-                    <h5 className="mb-0">HP Notebook</h5>
+                    <h5 className="mb-0">{title}</h5>
                     <h5 className="text-dark mb-0">$999</h5>
                   </div>
 
