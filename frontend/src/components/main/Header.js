@@ -55,11 +55,6 @@ const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/main/contact">
-               Contact Us
-              </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink className="nav-link" to="/admin/manageinvestor">
                ManageInvestor
               </NavLink>
@@ -79,6 +74,12 @@ const Header = () => {
               StartupProfile
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/investor/investorProfile">
+              InvestorProfile
+              </NavLink>
+            </li>
+           
           
           </ul>
           {/* Icons */}

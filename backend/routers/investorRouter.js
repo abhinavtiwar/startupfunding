@@ -82,4 +82,4 @@ router.put("/update/:id", (req, res) => {
 });
 
   // to find the entry by id and update with formdat
-module.exports=router;
+module.exports=router; 
