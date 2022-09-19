@@ -3,13 +3,10 @@ import React, { useEffect, useState } from "react";
 import profile from "../main/image/a.png";
 import { Formik } from "formik";
 import { Button } from "@mui/material";
-const StartupProfile = ({ fetchData }) => {
+const StartupProfile = () => {
  
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
-  const [startupFormData, setStartupFormData] = useState(null);
-  const [showUpdateForm, setShowUpdateForm] = useState(false);
-  const [startupArray, setStartupArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+ 
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
@@ -26,7 +23,7 @@ const StartupProfile = ({ fetchData }) => {
        
         Swal.fire({
           icon: "success",
-          title: "Success",
+          title: "Success 😀👌",
           text: "update successful",
         });
       } else {
