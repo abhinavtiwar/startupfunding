@@ -35,41 +35,44 @@ const InvestorProfile = () => {
   };
 
   return (
+    
     <div class="contact-wrap">
       <div class="contact-in">
         <img className="photos" src={profile} alt="profile" />
         <hr></hr>
         <h1>Investor Profile</h1>
         <h2>
-          <i class="fa fa-address-card" aria-hidden="true"></i>First Name
+          <i class="fa fa-address-card" aria-hidden="true"></i>First Name  
         </h2>
-        <p>{currentUser.fname}</p>
+       <p><h1 className="contentp" > {currentUser.fname}</h1></p>
         <h2>
           <i class="fa fa-address-card" aria-hidden="true"></i>Last Name
         </h2>
-        <p>{currentUser.lname}</p>
+        <p><h1 className="contentp">{currentUser.lname}</h1></p>
         <h2>
           <i class="fa fa-phone" aria-hidden="true"></i> Phone
         </h2>
-        <p>{currentUser.contact}</p>
+        <p><h1 className="contentp">{currentUser.contact}</h1></p>
         <h2>
           <i class="fa fa-envelope" aria-hidden="true"></i> Email
         </h2>
-        <p>{currentUser.email}</p>
+        <p><h1 className="contentp">{currentUser.email}</h1></p>
         <h2>
           <i class="fa fa-credit-card" aria-hidden="true"></i> Aadhar
         </h2>
-        <p>{currentUser.aadhar}</p>
+        <p><h1 className="contentp">{currentUser.aadhar}</h1></p>
       </div>
       <div class="contact-in">
-        <h1>Update Your Profile</h1>
+        <marquee>
+          <h1>Update Your Profile</h1>
+        </marquee>
         <Formik initialValues={currentUser} onSubmit={handleFormSubmit}>
           {({ values, handleChange, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <TextField
                 fullWidth
                 label="First Name"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 id="fname"
                 type="text"
                 value={values.fname}
@@ -78,7 +81,7 @@ const InvestorProfile = () => {
               <TextField
                 fullWidth
                 label="Last Name"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 id="lname"
                 type="text"
                 value={values.lname}
@@ -87,7 +90,7 @@ const InvestorProfile = () => {
               <TextField
                 fullWidth
                 label="Contact No"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 id="contact"
                 value={values.contact}
                 onChange={handleChange}
@@ -95,7 +98,7 @@ const InvestorProfile = () => {
               <TextField
                 fullWidth
                 label="Email Address"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 type="email"
                 id="email"
                 value={values.email}
@@ -104,7 +107,7 @@ const InvestorProfile = () => {
               <TextField
                 fullWidth
                 label="Age"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 id="age"
                 value={values.age}
                 onChange={handleChange}
@@ -112,7 +115,7 @@ const InvestorProfile = () => {
               <TextField
                 fullWidth
                 label="Password"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 id="password"
                 type="password"
                 value={values.password}
@@ -121,7 +124,7 @@ const InvestorProfile = () => {
               <TextField
                 fullWidth
                 label="Aadhar"
-                sx={{ mt: 3 }}
+                sx={{ mt: 4 }}
                 id="aadhar"
                 type="text"
                 value={values.aadhar}
@@ -133,7 +136,7 @@ const InvestorProfile = () => {
                 type="submit"
                 color="success"
                 fullWidth
-                sx={{ mt: 10 }}
+                sx={{ mt: 13 }}
               >
                 Update
               </Button>
