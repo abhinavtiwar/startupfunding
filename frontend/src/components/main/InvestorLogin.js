@@ -6,8 +6,10 @@ import email from "./image/email.jpg";
 import pass from "./image/pass.png";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function InvestorLogin() {
+  const navigate = useNavigate();
+
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
@@ -22,15 +24,24 @@ function InvestorLogin() {
       if(res.status === 200){ 
         Swal.fire({
           icon : 'success',
-          title : 'Success',
+          title : 'Success 😀👌',
           text : 'Login Successful'
         })
-      }else if(res.status === 300){
+        res.json().then(data => {
+          console.log(data);
+          sessionStorage.setItem('investor', JSON.stringify(data));
+        })
+        navigate("/investor/investorProfile");
+      }
+
+      
+      else if(res.status === 300){
         Swal.fire({
           icon : 'error',
           title : 'Oops!!',
-          text : 'Invalid Credentials'
+          text : 'Invalid Credentials or You dont have an account Sing up now'
         })
+       navigate("/main/Investorsignup");
       }
     })
 

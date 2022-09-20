@@ -21,7 +21,7 @@ function StartupSignup() {
       if (res.status === 200) {
         Swal.fire({
           icon: "success",
-          title: "Success",
+          title: "Success 😀👌",
           text: "signup Successful",
         });
       } else if (res.status === 300) {

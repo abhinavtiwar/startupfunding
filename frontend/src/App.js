@@ -7,20 +7,21 @@ import InvestorSignup from './components/main/InvestorSignup';
 import StartupLogin from './components/main/StartupLogin';
 import StartupSignup from './components/main/StartupSignup';
 import Admin from './components/admin';
+import Investor from './components/investor';
 import User from './components/investor';
 import AdminProfile from './components/admin/Profile';
 import UserProfile from './components/investor/Profile';
 import ResetPassword from './components/main/ResetPassword';
 import ContactUs from './components/main/ContactUs';
 import Home from './components/main/Home';
-
-
 import ManageInvestor from './components/admin/ManageInvestor';
 import ManageStartup from './components/admin/ManageStartup';
 import StartupProfile from './components/startup/StartupProfile';
+import InvestorProfile from './components/investor/InvestorProfile';
 import StartupAuthorisor from './startupAuth';
 import Listing from './components/main/Listing';
 import Startup from './components/startup';
+import InvestorAuthorisor from './investorAuth';
 function App() {
   return (
     <div>
@@ -47,14 +48,23 @@ function App() {
             <Route path="managestartup" element={<ManageStartup/>} />
           
             </Route>
+
           <Route element={<Startup />} path="startup"> 
           <Route path="startupprofile" element={
             <StartupAuthorisor>
             <StartupProfile/>
             </StartupAuthorisor>
           } />
-          
+          </Route>
+
+          <Route element={<Investor />} path="investor"> 
+          <Route path="investorProfile" element={
+            <InvestorAuthorisor>
+            <InvestorProfile/>
+            </InvestorAuthorisor>
+          } />
             </Route>
+
           {/* ljdshngd */}
           <Route element={<User />} path="user">
             <Route path="pofile" element={<UserProfile />} />

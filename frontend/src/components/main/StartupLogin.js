@@ -24,7 +24,7 @@ const StartupLogin = () => {
       if(res.status === 200){
         Swal.fire({
           icon : 'success',
-          title : 'Success',
+          title : 'Success 😀👌',
           text : 'Login Successful'
         })
         res.json().then(data => {
