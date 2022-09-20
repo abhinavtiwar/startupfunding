@@ -129,10 +129,7 @@ const StartupProfile = () => {
               <td><h2>Name :</h2></td>
               <td className="star">{currentUser.name}</td>
             </tr>
-            <tr>
-              <td><h2>Phone :</h2></td>
-              <td className="star">{currentUser.phone}</td>
-            </tr>
+            
             <tr>
               <td><h2>Email :</h2></td>
               <td className="star">{currentUser.email}</td>
