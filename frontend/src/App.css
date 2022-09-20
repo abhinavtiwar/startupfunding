@@ -301,8 +301,16 @@ button{
 
  .photo{
  margin-left: 50px;
-height: 200px;
+ border-radius: 40%;
+height: 240px;
 width: 330px;
+ }
+
+
+
+ .star{
+  font-size: 20px;
+ 
  }
 
 .container{
@@ -318,13 +326,13 @@ width: 330px;
   }
   .contact-left{
     flex-basis: 60%;
-    background: #e181de7e;
+    background: #65cbd282;
     padding: 40px 60px;
   }
   .contact-right{
     flex-basis: 40%;
     padding: 40px;
-    background: #1b00b5f5;
+    background: #48a19bf5;
     color: #fff;
   }
   h1{
@@ -430,9 +438,14 @@ width: 330px;
     margin: 0;
     box-sizing: border-box;
   }
+  .contentp{
+    margin-left: 3rem;
+  }
+
   .photos{
     margin-left: 120px;
-   height: 200px;
+    border-radius: 50%;
+   height: 250px;
    width: 330px;
     }
 .field1{
