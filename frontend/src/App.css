@@ -122,7 +122,10 @@ button{
 
 /* signup */
 
-
+.card3{
+  margin-left: 10rem;
+  margin-top: 5rem;
+}
 .main {
   text-align: center;
   justify-content: center;
