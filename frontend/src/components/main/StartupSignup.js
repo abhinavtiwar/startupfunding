@@ -42,15 +42,13 @@ function StartupSignup() {
 
   return (
     <div className="mains">
-      <div className="sub-mains">
+      <div classNameName="sub-mains">
         <div>
           <div className="imgs">
-            <div className="container-image">
-              <img src={profile} alt="profile" className="profile" />
-            </div>
+            
           </div>
           <div>
-            <h1>Signup Page</h1>
+            
             <Formik
               initialValues={{
                 title: "",
@@ -67,42 +65,204 @@ function StartupSignup() {
               // validationSchema={loginSchema}
             >
               {({ values, handleChange, handleSubmit, errors, touched }) => (
-                <form onSubmit={handleSubmit}>
-                  <div className="second-input">
-                    <img src={email} alt="msglogo" className="email" />
-                    <input type="text" id="title"   onChange={handleChange} placeholder="Title" className="title" />
+                <section className="h-100 bg-dark">
+                <div className="container py-5 h-100">
+                  <div className="row d-flex justify-content-center align-items-center h-100">
+                    <div className="col">
+                      <div className="card card-registration my-4">
+                        <div className="row g-0">
+                          <div className="col-xl-6 d-none d-xl-block">
+                            <img
+                              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                              alt="Sample photo"
+                              className="img-fluid"
+                              style={{
+                                borderTopLeftRadius: ".25rem",
+                                borderBottomLeftRadius: ".25rem"
+                              }}
+                            />
+                          </div>
+                          <div className="col-xl-6">
+                            <div className="card-body p-md-5 text-black">
+                              <h3 className="mb-5 text-uppercase">
+                                Startup Signup Form
+                              </h3>
+                              <div className="row">
+                                <div className="col-md-6 mb-4">
+                                  <div className="form-outline">
+                                    <input
+                                      type="text"
+                                      id="form3Example1m"
+                                      className="form-control form-control-lg"
+                                    />
+                                    <label className="form-label" htmlFor="form3Example1m">
+                                      First name
+                                    </label>
+                                  </div>
+                                </div>
+                                <div className="col-md-6 mb-4">
+                                  <div className="form-outline">
+                                    <input
+                                      type="text"
+                                      id="form3Example1n"
+                                      className="form-control form-control-lg"
+                                    />
+                                    <label className="form-label" htmlFor="form3Example1n">
+                                      Last name
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col-md-6 mb-4">
+                                  <div className="form-outline">
+                                    <input
+                                      type="text"
+                                      id="form3Example1m1"
+                                      className="form-control form-control-lg"
+                                    />
+                                    <label className="form-label" htmlFor="form3Example1m1">
+                                      Mother's name
+                                    </label>
+                                  </div>
+                                </div>
+                                <div className="col-md-6 mb-4">
+                                  <div className="form-outline">
+                                    <input
+                                      type="text"
+                                      id="form3Example1n1"
+                                      className="form-control form-control-lg"
+                                    />
+                                    <label className="form-label" htmlFor="form3Example1n1">
+                                      Father's name
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  id="form3Example8"
+                                  className="form-control form-control-lg"
+                                />
+                                <label className="form-label" htmlFor="form3Example8">
+                                  Address
+                                </label>
+                              </div>
+                              <div className="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                                <h6 className="mb-0 me-4">Gender: </h6>
+                                <div className="form-check form-check-inline mb-0 me-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="inlineRadioOptions"
+                                    id="femaleGender"
+                                    defaultValue="option1"
+                                  />
+                                  <label className="form-check-label" htmlFor="femaleGender">
+                                    Female
+                                  </label>
+                                </div>
+                                <div className="form-check form-check-inline mb-0 me-4">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="inlineRadioOptions"
+                                    id="maleGender"
+                                    defaultValue="option2"
+                                  />
+                                  <label className="form-check-label" htmlFor="maleGender">
+                                    Male
+                                  </label>
+                                </div>
+                                <div className="form-check form-check-inline mb-0">
+                                  <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="inlineRadioOptions"
+                                    id="otherGender"
+                                    defaultValue="option3"
+                                  />
+                                  <label className="form-check-label" htmlFor="otherGender">
+                                    Other
+                                  </label>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col-md-6 mb-4">
+                                  <select className="select">
+                                    <option value={1}>State</option>
+                                    <option value={2}>Option 1</option>
+                                    <option value={3}>Option 2</option>
+                                    <option value={4}>Option 3</option>
+                                  </select>
+                                </div>
+                                <div className="col-md-6 mb-4">
+                                  <select className="select">
+                                    <option value={1}>City</option>
+                                    <option value={2}>Option 1</option>
+                                    <option value={3}>Option 2</option>
+                                    <option value={4}>Option 3</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div className="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  id="form3Example9"
+                                  className="form-control form-control-lg"
+                                />
+                                <label className="form-label" htmlFor="form3Example9">
+                                  DOB
+                                </label>
+                              </div>
+                              <div className="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  id="form3Example90"
+                                  className="form-control form-control-lg"
+                                />
+                                <label className="form-label" htmlFor="form3Example90">
+                                  Pincode
+                                </label>
+                              </div>
+                              <div className="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  id="form3Example99"
+                                  className="form-control form-control-lg"
+                                />
+                                <label className="form-label" htmlFor="form3Example99">
+                                  Course
+                                </label>
+                              </div>
+                              <div className="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  id="form3Example97"
+                                  className="form-control form-control-lg"
+                                />
+                                <label className="form-label" htmlFor="form3Example97">
+                                  Email ID
+                                </label>
+                              </div>
+                              <div className="d-flex justify-content-end pt-3">
+                                <button type="button" className="btn btn-light btn-lg">
+                                  Reset all
+                                </button>
+                                <button type="button" className="btn btn-warning btn-lg ms-2">
+                                  Submit form
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="second-input">
-                    <img src={email} alt="msglogo" className="email" />
-                    <input type="text" id="name"   onChange={handleChange} placeholder="Name" className="name" />
-                  </div>
-                  <div className="second-input">
-                    <img src={pass} alt="password" className="email" />
-                    <input type="email" id="email"   onChange={handleChange} placeholder="email" className="Email" />
-                  </div>
-                  <div className="second-input">
-                    <img src={pass} alt="password" className="email" />
-                    <input type="Password" id="password"   onChange={handleChange} placeholder="Password" className="password" />
-                  </div>
-                  <div className="second-input">
-                    <img src={pass} alt="password" className="email" />
-                    <input type="number" id="year"  onChange={handleChange} placeholder="Year" className="year" />
-                  </div>
-                  <div className="second-input">
-                    <img src={pass} alt="password" className="email" />
-                    <input type="text" id="phone"  onChange={handleChange} placeholder="Phone No" className="year" />
-                  </div>
-
-                  <div className="login-button">
-                    <button type="Submit">Signup</button>
-                  </div>
-
-                  <h5 className="text-center mt-2">
-                    Already have an account?{" "}
-                    <Link to="/main/StartupLogin">Login Here</Link>
-                  </h5>
-                </form>
-              )}
+                </div>
+              </section>
+                )}
             </Formik>
           </div>
         </div>
