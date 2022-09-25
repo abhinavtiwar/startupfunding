@@ -96,8 +96,8 @@ const StartupProfile = () => {
               fullWidth
               label="year"
               sx={{ mt: 4 }}
-              id="year"
               type="text"
+              id="year"
               value={values.year}
               onChange={handleChange}
             />

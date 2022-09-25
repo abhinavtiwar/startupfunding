@@ -63,9 +63,12 @@ const InvestorProfile = () => {
         <p><h1 className="contentp">{currentUser.aadhar}</h1></p>
       </div>
       <div class="contact-in">
-        <marquee>
-          <h1>Update Your Profile</h1>
-        </marquee>
+      <div className="justify-content-center d-flex align-items-center mb-2 pb-1">
+                             
+      <span className=" h1 fw-bold mb-3">
+        Investor Profile
+      </span>
+    </div>
         <Formik initialValues={currentUser} onSubmit={handleFormSubmit}>
           {({ values, handleChange, handleSubmit }) => (
             <form onSubmit={handleSubmit}>

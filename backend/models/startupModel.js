@@ -1,8 +1,9 @@
 const {Schema , model} = require("../connection");
+const bcrypt=require('bcrypt');
 
 const schema = new Schema({
     title:String,
-    name:String,
+    name:String, 
     description:String,
     email:String,
     password:String,
@@ -13,5 +14,14 @@ const schema = new Schema({
     details:Array,
     createdAt:Date,
 })
+
+//here we are hashing the password
+schema.pre('save',async function(next){
+    console.log("hi hashing!");
+    if(this.isModified('password')){
+this.password=await bcrypt.hash(this.password, 12);
+    }
+    next(); 
+});
  
 module.exports=model("startup",schema);

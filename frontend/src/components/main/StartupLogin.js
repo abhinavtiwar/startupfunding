@@ -53,17 +53,7 @@ const StartupLogin = () => {
   });
 
   return (
-    <div className="bgimg  img-fluid" style={{ height: "100vh" }}>
-      <div className="row h-100 justify-content-center align-items-center">
-        
-        <div className="col-md-3">
-          <div className="card">
-           
-              <img src="https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png" className="profile mt-3 m-auto"/>
-            
-            <div className="card-body">
-              <h3 className="text-muted text-center">Startup Log In</h3>
-             
+    <div>
               <Formik
                 initialValues={{ email: "", password: "" }} //specifying initial value for form
                  // function to handle form submission
@@ -72,53 +62,97 @@ const StartupLogin = () => {
               >
                 {({ values, handleChange, handleSubmit, errors, touched }) => (
                   <form onSubmit={handleSubmit}>
-                    <TextField
-                      sx={{ mt: 3 }}
-                      fullWidth
-                      label="Email"
-                      placeholder="Email Address"
-                      id="email"
-                      value={values.email}
-                      onChange={handleChange}
-                      error={Boolean(errors.email) && touched.email}
-                      helperText={touched.email ? errors.email : ""}
-                    />
+                  <section className="vh-100" style={{ backgroundColor: "#E8CEBF" }}>
+                  <div className="container py-5 h-100">
+                    <div className="row d-flex justify-content-center align-items-center h-100">
+                      <div className="col col-xl-10">
+                        <div className="card" style={{ borderRadius: "1rem" }}>
+                          <div className="row g-0">
+                            <div className="col-md-6 col-lg-5 d-none d-md-block">
+                              <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                                alt="login form"
+                                className="img-fluid"
+                                style={{ borderRadius: "1rem 0 0 1rem" }}
+                              />
+                            </div>
+                            <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                              <div className="card-body p-4 p-lg-5 text-black">
+                                <div className="justify-content-center d-flex align-items-center mb-2 pb-1">
+                                 
+                                  <span className=" h1 fw-bold mb-3">
+                                    StartUp Login
+                                  </span>
+                                </div>
+    
+                                <div className="form-outline mb-4">
+                                  <TextField
+                                    fullWidth
+                                    label="Email Address"
+                                    color="secondary"
+                                    id="email"
+                                    value={values.email}
+                                    onChange={handleChange}
+                                    focused
+                                  />
+                                </div>
+                                <div className="form-outline mb-4">
+                                  <TextField
+                                    fullWidth
+                                    label="Password"
+                                    color="secondary"
+                                    id="password"
+                                    value={values.password}
+                                    onChange={handleChange}
+                                    focused
+                                  />
+                                </div>
+                                <Button
+                                  variant="contained"
+                                  fullWidth
+                                  type="submit"
+                                  sx={{ mt: 2 }}
+                                  color="success"
+                                >
+                                  Login Here
+                                </Button>
+                                <h5 className="text-center mt-4">
+                                  Don't have an account?{" "}
+                                  <Link to="/main/Startupsignup">SignUp Here</Link>
+                                </h5>
+                                <hr className="my-3" />
+                                <button 
+                                data-url="https://www.google.com/"
+                                  className="btn btn-lg btn-block btn-primary"
+                                  style={{ backgroundColor: "#dd4b39" }}
+                                  type="submit"
+                                >
+                                  <i className="fab fa-google me-2" /> Sign in with google
+                                </button>
+                                <button
+                                  className="btn btn-lg btn-block btn-primary mb-2"
+                                  style={{ backgroundColor: "#3b5998" }}
+                                  type="submit"
+                                >
+                                  <i className="fab fa-facebook-f me-2" />
+                                  Sign in with facebook
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
 
-                    <TextField
-                      sx={{ mt: 3 }}
-                      fullWidth
-                      type="password"
-                      label="Password"
-                      placeholder="Password"
-                      id="password"
-                      value={values.password}
-                      onChange={handleChange}
-                      error={Boolean(errors.password) && touched.password}
-                      helperText={touched.password ? errors.password : ""}
-                    />
-                      <h6> 
-                    <Link to="/main/reset">Reset Password</Link>
-                    </h6>
+  </form>
+  )}
+</Formik>
+  </div>
 
-                    <Button
-                      type="submit"
-                      fullWidth
-                      variant="contained"
-                      sx={{ mt: 5 , mb:1, backgroundColor:"#054c79e6"}}
-                    >
-                      Login
-                    </Button>
-                    <h6 className="text-center"> 
-                    Don't have an account?<Link to="/main/StartupSignup">Sign up</Link>
-                    </h6>
-                  </form>
-                )}
-              </Formik>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+                    
   );
 };
 

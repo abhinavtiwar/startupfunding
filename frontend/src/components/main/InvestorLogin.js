@@ -1,5 +1,5 @@
 import loginlogo from "./image/loginlogo.png";
-import { Button } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
@@ -48,179 +48,100 @@ function InvestorLogin() {
       .required("Required"),
   });
   return (
-    <div className="main">
-      <div className="sub-main-Logins">
-        <div>
-          <div className="imgs">
-            <div className="container-image">
-             
-            </div>
-          </div>
-          <div>
-           
-            <Formik
-              initialValues={{ email: "", password: "" }} //specifying initial value for form
-              onSubmit={handleFormSubmit} // function to handle form submission
-              validationSchema={loginSchema}
-            >
-              {({ values, handleChange, handleSubmit, errors, touched }) => (
-                <>
-                {/* Section: Design Block */}
-                <section className="background-radial-gradient overflow-hidden">
-                  <style
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        "\n    .background-radial-gradient {\n      background-color: hsl(218, 41%, 15%);\n      background-image: radial-gradient(650px circle at 0% 0%,\n          hsl(218, 41%, 35%) 15%,\n          hsl(218, 41%, 30%) 35%,\n          hsl(218, 41%, 20%) 75%,\n          hsl(218, 41%, 19%) 80%,\n          transparent 100%),\n        radial-gradient(1250px circle at 100% 100%,\n          hsl(218, 41%, 45%) 15%,\n          hsl(218, 41%, 30%) 35%,\n          hsl(218, 41%, 20%) 75%,\n          hsl(218, 41%, 19%) 80%,\n          transparent 100%);\n    }\n\n    #radius-shape-1 {\n      height: 220px;\n      width: 220px;\n      top: -60px;\n      left: -130px;\n      background: radial-gradient(#44006b, #ad1fff);\n      overflow: hidden;\n    }\n\n    #radius-shape-2 {\n      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;\n      bottom: -60px;\n      right: -110px;\n      width: 300px;\n      height: 300px;\n      background: radial-gradient(#44006b, #ad1fff);\n      overflow: hidden;\n    }\n\n    .bg-glass {\n      background-color: hsla(0, 0%, 100%, 0.9) !important;\n      backdrop-filter: saturate(200%) blur(25px);\n    }\n  "
-                    }}
-                  />
-                  <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-                    <div className="row gx-lg-5 align-items-center mb-5">
-                      <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
-                        <h1
-                          className="my-5 display-5 fw-bold ls-tight"
-                          style={{ color: "hsl(218, 81%, 95%)" }}
-                        >
-                          The best offer <br />
-                          <span style={{ color: "hsl(218, 81%, 75%)" }}>
-                            for your business
-                          </span>
-                        </h1>
-                        <p
-                          className="mb-4 opacity-70"
-                          style={{ color: "hsl(218, 81%, 85%)" }}
-                        >
-                          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                          Temporibus, expedita iusto veniam atque, magni tempora mollitia
-                          dolorum consequatur nulla, neque debitis eos reprehenderit quasi ab
-                          ipsum nisi dolorem modi. Quos?
-                        </p>
-                      </div>
-                      <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
-                        <div
-                          id="radius-shape-1"
-                          className="position-absolute rounded-circle shadow-5-strong"
-                        />
-                        <div
-                          id="radius-shape-2"
-                          className="position-absolute shadow-5-strong"
-                        />
-                        <div className="card bg-glass">
-                          <div className="card-body px-4 py-5 px-md-5">
-                            <form>
-                              {/* 2 column grid layout with text inputs for the first and last names */}
-                              <div className="row">
-                                <div className="col-md-6 mb-4">
-                                  <div className="form-outline">
-                                    <input
-                                      type="text"
-                                      id="form3Example1"
-                                      className="form-control"
-                                    />
-                                    <label className="form-label" htmlFor="form3Example1">
-                                      First name
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="col-md-6 mb-4">
-                                  <div className="form-outline">
-                                    <input
-                                      type="text"
-                                      id="form3Example2"
-                                      className="form-control"
-                                    />
-                                    <label className="form-label" htmlFor="form3Example2">
-                                      Last name
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                              {/* Email input */}
-                              <div className="form-outline mb-4">
-                                <input
-                                  type="email"
-                                  id="form3Example3"
-                                  className="form-control"
-                                />
-                                <label className="form-label" htmlFor="form3Example3">
-                                  Email address
-                                </label>
-                              </div>
-                              {/* Password input */}
-                              <div className="form-outline mb-4">
-                                <input
-                                  type="password"
-                                  id="form3Example4"
-                                  className="form-control"
-                                />
-                                <label className="form-label" htmlFor="form3Example4">
-                                  Password
-                                </label>
-                              </div>
-                              {/* Checkbox */}
-                              <div className="form-check d-flex justify-content-center mb-4">
-                                <input
-                                  className="form-check-input me-2"
-                                  type="checkbox"
-                                  defaultValue=""
-                                  id="form2Example33"
-                                  defaultChecked=""
-                                />
-                                <label className="form-check-label" htmlFor="form2Example33">
-                                  Subscribe to our newsletter
-                                </label>
-                              </div>
-                              {/* Submit button */}
-                              <button
-                                type="submit"
-                                className="btn btn-primary btn-block mb-4"
-                              >
-                                Login
-                              </button>
-                              {/* Register buttons */}
-                              <div className="text-center">
-                                <p>or sign up with:</p>
-                                <button
-                                  type="button"
-                                  className="btn btn-link btn-floating mx-1"
-                                >
-                                  <i className="fab fa-facebook-f" />
-                                </button>
-                                <button
-                                  type="button"
-                                  className="btn btn-link btn-floating mx-1"
-                                >
-                                  <i className="fab fa-google" />
-                                </button>
-                                <button
-                                  type="button"
-                                  className="btn btn-link btn-floating mx-1"
-                                >
-                                  <i className="fab fa-twitter" />
-                                </button>
-                                <button
-                                  type="button"
-                                  className="btn btn-link btn-floating mx-1"
-                                >
-                                  <i className="fab fa-github" />
-                                </button>
-                              </div>
-                            </form>
+    <div>
+      <Formik
+        initialValues={{ email: "", password: "" }} //specifying initial value for form
+        onSubmit={handleFormSubmit} // function to handle form submission
+        validationSchema={loginSchema}
+      >
+        {({ values, handleChange, handleSubmit, errors, touched }) => (
+          <form onSubmit={handleSubmit}>
+            <section className="vh-100" style={{ backgroundColor: "#C7DDCC" }}>
+              <div className="container py-5 h-100">
+                <div className="row d-flex justify-content-center align-items-center h-100">
+                  <div className="col col-xl-10">
+                    <div className="card" style={{ borderRadius: "1rem" }}>
+                      <div className="row g-0">
+                        <div className="col-md-6 col-lg-5 d-none d-md-block">
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+                            alt="login form"
+                            className="img-fluid"
+                            style={{ borderRadius: "1rem 0 0 1rem" }}
+                          />
+                        </div>
+                        <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                          <div className="card-body p-4 p-lg-5 text-black">
+                            <div className="justify-content-center d-flex align-items-center mb-2 pb-1">
+                             
+                              <span className=" h1 fw-bold mb-3">
+                                Investor Login
+                              </span>
+                            </div>
+
+                            <div className="form-outline mb-4">
+                              <TextField
+                                fullWidth
+                                label="Email Address"
+                                color="secondary"
+                                id="email"
+                                value={values.email}
+                                onChange={handleChange}
+                                focused
+                              />
+                            </div>
+                            <div className="form-outline mb-4">
+                              <TextField
+                                fullWidth
+                                label="Password"
+                                color="secondary"
+                                id="password"
+                                value={values.password}
+                                onChange={handleChange}
+                                focused
+                              />
+                            </div>
+                            <Button
+                              variant="contained"
+                              fullWidth
+                              type="submit"
+                              sx={{ mt: 3 }}
+                              color="success"
+                            >
+                              Login Here
+                            </Button>
+                            <h5 className="text-center mt-4">
+                              Don't have an account?{" "}
+                              <Link to="/main/Investorsignup">SignUp Here</Link>
+                            </h5>
+                            <hr className="my-3" />
+                            <button 
+                            data-url="https://www.google.com/"
+                              className="btn btn-lg btn-block btn-primary"
+                              style={{ backgroundColor: "#dd4b39" }}
+                              type="submit"
+                            >
+                              <i className="fab fa-google me-2" /> Sign in with google
+                            </button>
+                            <button
+                              className="btn btn-lg btn-block btn-primary mb-2"
+                              style={{ backgroundColor: "#3b5998" }}
+                              type="submit"
+                            >
+                              <i className="fab fa-facebook-f me-2" />
+                              Sign in with facebook
+                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </section>
-                {/* Section: Design Block */}
-              </>
-              
-              )}
-            </Formik>
-
-            
-          </div>
-        </div>
-      </div>
+                </div>
+              </div>
+            </section>
+          </form>
+        )}
+      </Formik>
     </div>
   );
 }
