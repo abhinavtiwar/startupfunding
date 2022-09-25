@@ -22,6 +22,7 @@ import StartupAuthorisor from './startupAuth';
 import Listing from './components/main/Listing';
 import Startup from './components/startup';
 import InvestorAuthorisor from './investorAuth';
+import StartupDetail from './components/startup/StartupDetail';
 function App() {
   return (
     <div>
@@ -49,12 +50,13 @@ function App() {
           
             </Route>
 
-          <Route element={<Startup />} path="startup"> 
+          <Route element={<Startup />} path="startup">  
           <Route path="startupprofile" element={
             <StartupAuthorisor>
             <StartupProfile/>
             </StartupAuthorisor>
           } />
+          <Route path="sdetail" element={<StartupDetail/>} />
           </Route>
 
           <Route element={<Investor />} path="investor"> 
