@@ -30,8 +30,9 @@ const StartupLogin = () => {
         res.json().then(data => {
           console.log(data);
           sessionStorage.setItem('startup', JSON.stringify(data));
+          navigate("/startup/startupprofile");
         })
-        navigate("/startup/startupprofile");
+       
       }
       else if(res.status === 300){
         Swal.fire({

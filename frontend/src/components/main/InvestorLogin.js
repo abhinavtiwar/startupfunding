@@ -28,8 +28,8 @@ function InvestorLogin() {
         res.json().then((data) => {
           console.log(data);
           sessionStorage.setItem("investor", JSON.stringify(data));
+          navigate("/investor/investorProfile");
         });
-        navigate("/investor/investorProfile");
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",

@@ -1,9 +1,13 @@
 const express = require("express");
 const router=express.Router();
 const Model=require("../models/investorModel");
+const bcrypt = require('bcrypt');
+const salt = bcrypt.genSaltSync(12);
 
 router.post('/add',(req,res) =>{
     const formdata=req.body;
+    const hash = bcrypt.hashSync(formdata.password, salt);
+    formdata.password = hash;
      console.log(req.body);//used to get the data in post
    // res.send("request processed in user router");
    
@@ -53,19 +57,26 @@ router.post( '/authenticate', (req, res) => {
 
   const formdata = req.body;
 //findone is used to find first entry 
-  Model.findOne({email : formdata.email, password : formdata.password})
-  .then((userdata) => {
-    if(userdata){
-      console.log('login success');
-      res.status(200).json(userdata);
+  // Model.findOne({email : formdata.email, password : formdata.password})
+  Model.findOne({email : formdata.email})
+  .then((result) => {        
+    // logic for validating user credentials
+    // if email and password matches then result will contain their data
+    if(result){
+        if(bcrypt.compareSync(formdata.password, result.password ))
+            res.json(result);
+        else{
+            res.status(300).json({ status : 'Login Failed' })
+        }
     }else{
-      console.log('login failed');
-      res.status(300).json({loginStatus : false})
+        // if result is null
+        res.status(300).json({ status : 'Login Failed' })
     }
-  }).catch((err) => {
-    console.error(err);
-    res.json(err);
-  });
+
+}).catch((err) => {
+    console.log(err);
+    res.status(300).json(err);
+});
 })
 
 router.put("/update/:id", (req, res) => {

@@ -19,12 +19,12 @@ const schema=new Schema({
 
 
 //here we are hashing the password
-schema.pre('save',async function(next){
+schema.pre('save',function(next){
     console.log("hi hashing!");
     if(this.isModified('password')){
-this.password= await bcrypt.hash(this.password, 12);
+this.password=bcrypt.hash(this.password, 12);
     }
     next(); 
 });
 
-module.exports=model("investor",schema);
+module.exports=model("investor",schema); 
