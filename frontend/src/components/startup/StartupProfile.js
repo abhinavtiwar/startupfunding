@@ -3,15 +3,16 @@ import React, { useEffect, useState } from "react";
 import profile from "../main/image/maj.jpg";
 import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
+import app_config from "../../config";
 const StartupProfile = () => {
  
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
- 
+  const api_url = app_config;
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
 
-    fetch("http://localhost:5000/startup/update/" + currentUser._id, {
+    fetch(`${api_url}/startup/update/${currentUser._id}`, {
       method: "PUT",
       body: JSON.stringify(formdata),
       headers: {
