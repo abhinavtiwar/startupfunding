@@ -9,6 +9,24 @@ const StartupProfile = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
   const api_url = app_config;
 
+  const uploadFile = (e) => {
+
+    const [selfile, setSelfile] = useState("");
+
+    const file = e.target.files[0]
+    setSelFile(file.name)
+    const fd = new FormData()
+    fd.append("myfile", file)
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("uploaded")
+      }
+    })
+  }
+
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
 
@@ -118,7 +136,7 @@ const StartupProfile = () => {
         
         <div className="contact-right">
          
-          <img className="photo" src={profile} alt="profile" />
+          <img className="photo" onClick={uploadFile} alt="profile" />
           <hr></hr>
           <h3>StartUp Profile</h3>
           <table>
