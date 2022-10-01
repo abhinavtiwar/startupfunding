@@ -86,15 +86,6 @@ const Header = () => {
            
           
           </ul>
-          {/* Icons */}
-          <ul className="navbar-nav d-flex flex-row me-1">
-            <li className="nav-item me-3 me-lg-0">
-              <a className="nav-link" href="#">
-                <i className="fab fa-twitter" />
-              </a>
-            </li>
-          </ul>
-          {/* Search */}
           {
             startupLoggedin ? 
             <button className='btn btn-primary' onClick={e => {
@@ -105,14 +96,7 @@ const Header = () => {
             :
             <Link className="btn btn-link" to="/main/startuplogin">Startup Login</Link>
           }
-          <form className="w-auto">
-            <input
-              type="search"
-              className="form-control"
-              placeholder="Type query"
-              aria-label="Search"
-            />
-          </form>
+         
         </div>
       </div>
       {/* Container wrapper */}

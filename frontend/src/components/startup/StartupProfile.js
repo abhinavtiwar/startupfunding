@@ -7,11 +7,11 @@ import app_config from "../../config";
 const StartupProfile = () => {
  
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
-  const api_url = app_config;
+  const api_url = app_config.api_url;
+  const [selFile, setSelFile] = useState("");
 
   const uploadFile = (e) => {
 
-    const [selfile, setSelfile] = useState("");
 
     const file = e.target.files[0]
     setSelFile(file.name)
@@ -29,17 +29,18 @@ const StartupProfile = () => {
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
-
+    formdata.thumbnail = selFile;
     fetch(`${api_url}/startup/update/${currentUser._id}`, {
       method: "PUT",
       body: JSON.stringify(formdata),
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => {
+    }).then( async (res) => {
       console.log(res.status);
       if (res.status === 200) {
-       
+        const data = await res.json();
+        console.log(data);
         Swal.fire({
           icon: "success",
           title: "Success 😀👌",
@@ -136,7 +137,9 @@ const StartupProfile = () => {
         
         <div className="contact-right">
          
-          <img className="photo" onClick={uploadFile} alt="profile" />
+          <input type="file"
+          onChange={uploadFile}
+           />
           <hr></hr>
           <h3>StartUp Profile</h3>
           <table>
