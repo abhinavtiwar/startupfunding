@@ -1,12 +1,17 @@
 import Swal from "sweetalert2";
 import React, { useEffect, useState } from "react";
-import profile from "../main/image/maj.jpg";
+
 import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
 const InvestorProfile = () => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("investor"))
   );
+  const [file, setFile] = useState();
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
@@ -35,40 +40,51 @@ const InvestorProfile = () => {
   };
 
   return (
-    
     <div class="contact-wrap">
       <div class="contact-in">
-        <img className="photos" src={profile} alt="profile" />
+        <div className="d-flex justify-content-center">
+          <img style={{ height: "200px", width: "500px" }} src={file} />
+        </div>
+        <div className="d-flex justify-content-center">
+          <input type="file" onChange={handleChange} />
+        </div>
         <hr></hr>
         <h1>Investor Profile</h1>
         <h2>
-          <i class="fa fa-address-card" aria-hidden="true"></i>First Name  
+          <i class="fa fa-address-card" aria-hidden="true"></i>First Name
         </h2>
-       <p><h1 className="contentp" > {currentUser.fname}</h1></p>
+        <p>
+          <h1 className="contentp"> {currentUser.fname}</h1>
+        </p>
         <h2>
           <i class="fa fa-address-card" aria-hidden="true"></i>Last Name
         </h2>
-        <p><h1 className="contentp">{currentUser.lname}</h1></p>
+        <p>
+          <h1 className="contentp">{currentUser.lname}</h1>
+        </p>
         <h2>
           <i class="fa fa-phone" aria-hidden="true"></i> Phone
         </h2>
-        <p><h1 className="contentp">{currentUser.contact}</h1></p>
+        <p>
+          <h1 className="contentp">{currentUser.contact}</h1>
+        </p>
         <h2>
           <i class="fa fa-envelope" aria-hidden="true"></i> Email
         </h2>
-        <p><h1 className="contentp">{currentUser.email}</h1></p>
+        <p>
+          <h1 className="contentp">{currentUser.email}</h1>
+        </p>
         <h2>
           <i class="fa fa-credit-card" aria-hidden="true"></i> Aadhar
         </h2>
-        <p><h1 className="contentp">{currentUser.aadhar}</h1></p>
+        <p>
+          <h1 className="contentp">{currentUser.aadhar}</h1>
+        </p>
       </div>
       <div class="contact-in">
-      <div className="justify-content-center d-flex align-items-center mb-2 pb-1">
-                             
-      <span className=" h1 fw-bold mb-3">
-        Investor Profile
-      </span>
-    </div>
+        <div className="justify-content-center d-flex align-items-center mb-2 pb-1">
+          <span className=" h1 fw-bold mb-3">Investor Profile</span>
+        </div>
         <Formik initialValues={currentUser} onSubmit={handleFormSubmit}>
           {({ values, handleChange, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
