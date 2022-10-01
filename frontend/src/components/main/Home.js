@@ -1,6 +1,11 @@
 import React from "react";
 import myimg from "./image/maj.jpg";
 import sak from "./image/sak.jpg";
+import Wave from "../img/wave.png";
+import Insta from "@iconscout/react-unicons/icons/uil-instagram";
+import Facebook from "@iconscout/react-unicons/icons/uil-facebook";
+import Gitub from "@iconscout/react-unicons/icons/uil-github";
+
 
 const Home = () => {
   return (
@@ -905,147 +910,17 @@ const Home = () => {
       {/* Custom scripts */}
       <>
         {/* Footer */}
-        <footer className="bg-dark text-center text-white text-lg-start text-muted">
-          {/* Section: Social media */}
-          <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            {/* Left */}
-            <div className="me-5 d-none d-lg-block">
-              <span>Get connected with us on social networks:</span>
-            </div>
-            {/* Left */}
-            {/* Right */}
-            <div>
-              <a href="" className="me-4 text-reset">
-                <i className="fab fa-facebook-f" />
-              </a>
-              <a href="" className="me-4 text-reset">
-                <i className="fab fa-twitter" />
-              </a>
-              <a href="" className="me-4 text-reset">
-                <i className="fab fa-google" />
-              </a>
-              <a href="" className="me-4 text-reset">
-                <i className="fab fa-instagram" />
-              </a>
-              <a href="" className="me-4 text-reset">
-                <i className="fab fa-linkedin" />
-              </a>
-              <a href="" className="me-4 text-reset">
-                <i className="fab fa-github" />
-              </a>
-            </div>
-            {/* Right */}
-          </section>
-          {/* Section: Social media */}
-          {/* Section: Links  */}
-          <section className="">
-            <div className="container text-center text-md-start mt-5">
-              {/* Grid row */}
-              <div className="row mt-3">
-                {/* Grid column */}
-                <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                  {/* Content */}
-                  <h6 className="text-uppercase fw-bold mb-4">
-                    <i className="fas fa-gem me-3" />
-                    Start In
-                  </h6>
-                  <p>
-                    You might be thinking that there's no point in putting a lot
-                    of time and effort into the Investing because people don't
-                    have Proper knowledge in to this field. Thats why we are here
-                     for simplfiy your investing journey.
-                  </p>
-                </div>
-                {/* Grid column */}
-                {/* Grid column */}
-                <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                  {/* Links */}
-                  <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Angular
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      React
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Vue
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Laravel
-                    </a>
-                  </p>
-                </div>
-                {/* Grid column */}
-                {/* Grid column */}
-                <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                  {/* Links */}
-                  <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Pricing
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Settings
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Orders
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Help
-                    </a>
-                  </p>
-                </div>
-                {/* Grid column */}
-                {/* Grid column */}
-                <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                  {/* Links */}
-                  <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                  <p>
-                    <i className="fas fa-home me-3" /> Lucknow, Uttar Pradesh,
-                    India
-                  </p>
-                  <p>
-                    <i className="fas fa-envelope me-3" />
-                    startIn@gmail.com
-                  </p>
-                  <p>
-                    <i className="fas fa-phone me-3" /> + 9845769845
-                  </p>
-                  <p>
-                    <i className="fas fa-print me-3" /> + 8898856545
-                  </p>
-                </div>
-                {/* Grid column */}
-              </div>
-              {/* Grid row */}
-            </div>
-          </section>
-          {/* Section: Links  */}
-          {/* Copyright */}
-          <div
-            className="text-center p-4"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-          >
-            © 2021 WWW:
-            <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-              StartIn.com
-            </a>
-          </div>
-          {/* Copyright */}
-        </footer>
+        <div className="footer">
+      <img src={Wave} alt="" style={{ width: "100%" }} />
+      <div className="f-content">
+        <span>Abhinavtiwari17200@gmail.com</span>
+        <div className="f-icons">
+          <Insta color="white" size={"3rem"} />
+          <Facebook color="white" size={"3rem"} />
+          <Gitub color="white" size={"3rem"} />
+        </div>
+      </div>
+    </div>
         {/* Footer */}
       </>
     </>
