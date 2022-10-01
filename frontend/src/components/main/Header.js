@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
-
+import logo from './image/logo.png'
 const Header = () => {
 
   const { startupLoggedin, setStartupLoggedin } = useContext(UserContext);
@@ -15,7 +15,7 @@ const Header = () => {
       <div className="container-fluid">
         {/* Navbar brand */}
         <a className="navbar-brand" href="/main/home">
-         <img src="https://businessdeccan.com/wp-content/uploads/2021/03/logo-1933884_640.png" height="40"/>
+         <img src={logo} height="40"/>
         </a>
         {/* Toggle button */}
         <button

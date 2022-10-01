@@ -1,9 +1,11 @@
 import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 function InvestorSignup() {
+  const navigate = useNavigate();
+
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
@@ -21,6 +23,7 @@ function InvestorSignup() {
           title: "Success 😀👌",
           text: "signup Successful",
         });
+        navigate("/main/Investorlogin");
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",
