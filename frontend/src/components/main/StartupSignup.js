@@ -1,10 +1,12 @@
 import { Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import { TextField, Button } from "@mui/material";
 
 function StartupSignup() {
+  const navigate = useNavigate();
+
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
@@ -21,7 +23,9 @@ function StartupSignup() {
           icon: "success",
           title: "Success 😀👌",
           text: "signup Successful",
+          
         });
+        navigate("/main/startuplogin");
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",

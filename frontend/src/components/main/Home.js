@@ -211,7 +211,7 @@ const Home = () => {
                     </p>{" "}
                     <a
                       className="btn  btn-primary btn-lg btn-rounded mb-4"
-                      href="#"
+                      href="/main/listing"
                       role="button"
                       aria-controls="#picker-editor"
                     >
