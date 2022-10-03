@@ -5,18 +5,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import { UserContext } from "../../context/userContext";
+import app_config from "../../config";
+
 // import "./Image.css"
 
 const StartupLogin = () => {
   const navigate = useNavigate();
-
+  const api_url = app_config.api_url;
   const { startupLoggedin, setStartupLoggedin } = useContext(UserContext);
 
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
 
-    fetch("http://localhost:5000/startup/authenticate", {
+    fetch(`${api_url}/startup/authenticate`, {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: {

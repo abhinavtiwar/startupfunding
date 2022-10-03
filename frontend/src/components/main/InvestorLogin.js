@@ -4,15 +4,18 @@ import { Formik } from "formik";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
+import app_config from "../../config";
 
 function InvestorLogin() {
   const navigate = useNavigate();
+
+  const api_url = app_config.api_url;
 
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
 
-    fetch("http://localhost:5000/investor/authenticate", {
+    fetch(`${api_url}/investor/authenticate`, {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: {

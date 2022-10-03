@@ -3,14 +3,16 @@ import { TextField, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
+import app_config from "../../config";
+
 function InvestorSignup() {
   const navigate = useNavigate();
-
+  const api_url = app_config.api_url;
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
 
-    fetch("http://localhost:5000/investor/add", {
+    fetch(`${api_url}/investor/add`, {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: {
