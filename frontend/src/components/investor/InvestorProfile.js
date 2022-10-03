@@ -8,13 +8,28 @@ const InvestorProfile = () => {
     JSON.parse(sessionStorage.getItem("investor"))
   );
   const [file, setFile] = useState();
+  const [selFile, setSelFile] = useState("");
+
   function handleChange(e) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
+    const file = e.target.files[0];
+    setSelFile(file.name);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("uploaded");
+      }
+    });
   }
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
+    formdata.avatar = selFile;
     fetch("http://localhost:5000/investor/update/" + currentUser._id, {
       method: "PUT",
       body: JSON.stringify(formdata),
