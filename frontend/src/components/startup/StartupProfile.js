@@ -10,11 +10,12 @@ const StartupProfile = () => {
   );
 
   const api_url = app_config.api_url;
+  const [file, setFile] = useState();
   const [selFile, setSelFile] = useState("");
 
-  const uploadFile = (e) => {
+  function handleChange(e) {
     console.log(e.target.files);
-    setSelFile(URL.createObjectURL(e.target.files[0]));
+    setFile(URL.createObjectURL(e.target.files[0]));
     const file = e.target.files[0];
     setSelFile(file.name);
     const fd = new FormData();
@@ -27,7 +28,7 @@ const StartupProfile = () => {
         console.log("uploaded");
       }
     });
-  };
+  }
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
@@ -138,9 +139,12 @@ const StartupProfile = () => {
         </div>
 
         <div className="contact-right">
-          <h2>Add Image:</h2>
-          <input type="file" onChange={uploadFile} />
-          <img src={selFile} />
+        <div className="d-flex justify-content-center">
+        <img style={{ height: "200px", width: "500px" }} src={file} />
+      </div>
+      <div className="d-flex justify-content-center">
+        <input type="file" onChange={handleChange} />
+      </div>
           <hr></hr>
           <h3>StartUp Profile</h3>
           <table>

@@ -63,7 +63,7 @@ const StartupLogin = () => {
       >
         {({ values, handleChange, handleSubmit, errors, touched }) => (
           <form onSubmit={handleSubmit}>
-            <section className="vh-100" style={{ backgroundColor: "#E8CEBF" }}>
+            <section className="vh-100" style={{ backgroundColor: "#C7DDCC" }}>
               <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                   <div className="col col-xl-10">

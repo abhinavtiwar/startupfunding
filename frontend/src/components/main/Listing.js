@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-function  Listing() {
-
-
-
+function Listing() {
   const [userArray, setUserArray] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -36,72 +34,64 @@ function  Listing() {
   };
 
   const displayComponents = () => {
-    
-      if (!loading) {
-        return userArray.map(
-          ({
-                Startup  ,title,
-                email,
-                password,
-                year,
-                createdAt,
-          }) =>(
-            <div className="col-md-4 col-lg-4 mb-4 mb-lg-0">
-              <div className="card mb-5">
-                <div className="d-flex justify-content-between p-3">
-                  <p className="lead mb-0">Welcome To Our Project</p>
-                  <div
-                    className="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
-                    style={{ width: "35px", height: "35px" }}
-                  >
-                    <p className="text-white mb-0 small">Startup</p>
-                  </div>
+    if (!loading) {
+      return userArray.map(
+        ({_id,  Startup, title, email, password, year, thumbnail, createdAt }) => (
+          <div className="col-md-4 col-lg-4 mb-4 mb-lg-0">
+            <div className="card mb-5">
+              <div className="d-flex justify-content-between p-3">
+                <p className="lead mb-0">{title}</p>
+                <div
+                  className="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
+                  style={{ width: "35px", height: "35px" }}
+                >
+                  <p className="text-white mb-0 small">Startup</p>
                 </div>
-                <img
-                  src="https://evolvers.co.in/wp-content/uploads/2019/11/Healthy-Startup.jpeg"
-                  className="card-img-top"
-                  alt="Startup"
-                />
-                <div className="card-body">
-                  <div className="d-flex justify-content-between">
-                    <p className="small">
-                      <a href="#!" className="text-muted">
-                       <h3> Startup</h3>
-                      </a>
-                    </p>
-                    <p className="small">
-                      <h4>{year}</h4>
-                    </p>
-                  </div>
+              </div>
+              <img
+                src={"http://localhost:5000/"+ thumbnail}
+                className="card-img-top"
+                alt="Startup"
+              />
+              <div className="card-body">
+                <div className="d-flex justify-content-between">
+                  <p className="small">
+                    <a href="#!" className="text-muted">
+                      <h3> Startup</h3>
+                    </a>
+                  </p>
+                  <p className="small">
+                    <h4>{year}</h4>
+                  </p>
+                </div>
 
-                  <div className="d-flex justify-content-between mb-3">
-                    <h4 className="mb-0">{title}</h4>
-                    <h4 className="text-dark mb-0">{email}</h4>
-                  </div>
+                <div className="d-flex justify-content-between mb-3">
+                  
+                  <h4 className="text-dark mb-0">{email}</h4>
+                </div>
+                <Link to={"/main/sdetail/"+_id}>View More</Link>
 
-                  <div className="d-flex justify-content-between mb-2">
-                    <p className="text-muted mb-0">
-                      <span className="fw-bold"></span>
-                    </p>
-                    <div className="ms-auto text-warning">
+                <div className="d-flex justify-content-between mb-2">
+                  <p className="text-muted mb-0">
+                    <span className="fw-bold"></span>
+                  </p>
+                  <div className="ms-auto text-warning">
                     <i class="fa-solid fa-thumbs-up"></i>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          )
-        );
-      }
-    };
+          </div>
+        )
+      );
+    }
+  };
 
   return (
     <div>
       <section style={{ backgroundColor: "#eee" }}>
         <div className="container py-5">
-          <div className="row">
-            {displayComponents()}
-          </div>
+          <div className="row">{displayComponents()}</div>
         </div>
       </section>
     </div>

@@ -43,6 +43,7 @@ function App() {
             <Route path="reset" element={<ResetPassword />} />
             <Route path="contact" element={<ContactUs />} />
             <Route path="home" element={<Home />} />
+            <Route path="sdetail/:id" element={<StartupDetail />} />
 
             <Route path="listing" element={<Listing />} />
           </Route>
@@ -62,7 +63,7 @@ function App() {
                 </StartupAuthorisor>
               }
             />
-            <Route path="sdetail" element={<StartupDetail />} />
+            
           </Route>
 
           <Route element={<Investor />} path="investor">

@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const StartupDetail = () => {
 
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
- 
+    // const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
+  const {id} = useParams();
 
+  
     console.log(currentUser);
 
   return (
@@ -16,7 +18,7 @@ const StartupDetail = () => {
       <div className="col-lg-4 col-md-5 xs-margin-30px-bottom">
         <div className="team-single-img">
           <img
-            src="https://img.freepik.com/free-vector/startup-development_1284-22687.jpg?w=2000"
+          src={currentUser.thumbnail}
             alt="xyz"
             className="coverimg"
           />

@@ -31,6 +31,7 @@ app.use("/admin", adminRouter);
 app.use("/contact", contactRouter);
 app.use("/util", utilRouter);
 
+app.use(express.static('./static/uploads'))
 
 //starting the server
 httpServer.listen(port, () => {

@@ -29,7 +29,7 @@ const InvestorProfile = () => {
 
   console.log(currentUser);
   const handleFormSubmit = (formdata) => {
-    formdata.avatar = selFile;
+    formdata.thumbnail = selFile;
     fetch("http://localhost:5000/investor/update/" + currentUser._id, {
       method: "PUT",
       body: JSON.stringify(formdata),
