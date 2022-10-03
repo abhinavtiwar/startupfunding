@@ -3,15 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import { TextField, Button } from "@mui/material";
+import app_config from "../../config";
 
 function StartupSignup() {
   const navigate = useNavigate();
-
+  const api_url = app_config.api_url;
   const handleFormSubmit = (formdata) => {
     console.log("Form submitted!!");
     console.log(formdata);
 
-    fetch("http://localhost:5000/startup/add", {
+    fetch(`${api_url}/startup/add`, {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: {
