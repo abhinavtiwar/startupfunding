@@ -5,6 +5,7 @@ const schema = new Schema({
     title:String,
     name:String, 
     description:String,
+    documents: Array,
     email:String,
     password:String,
     thumbnail:String,

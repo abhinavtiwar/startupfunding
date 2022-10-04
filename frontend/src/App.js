@@ -25,6 +25,7 @@ import InvestorAuthorisor from "./investorAuth";
 import StartupDetail from "./components/startup/StartupDetail";
 import { useState } from "react";
 import { UserProvider } from "./context/userContext";
+import ManageServices from "./components/startup/ManageServices";
 function App() {
 
   const [currentStartup, setCurrentStartup] = useState(JSON.parse(sessionStorage.getItem('startup')));
@@ -65,7 +66,7 @@ function App() {
                 </StartupAuthorisor>
               }
             />
-            
+             <Route path="manageservices" element={<ManageServices />} />
           </Route>
 
           <Route element={<Investor />} path="investor">

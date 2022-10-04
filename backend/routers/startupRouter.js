@@ -51,8 +51,15 @@ router.delete("/delete/:id", (req, res) => {
 });
 
 router.get("/getbyid/:id", (req, res) => {
-  console.log(req.params.id); //this is used to get data when data is in url from (GET). for body data(POST) used req.body
-  res.send("responce from getbyid");
+  Model.findById(req.params.id)
+    .then((result) => {
+      console.log(result);
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.json(err);
+    });
 });
 
 // for login page

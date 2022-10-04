@@ -689,6 +689,7 @@ tr td {
 .coverimg {
   max-width: 100%;
   height: auto;
+  background-size: cover;
 }
 
 .list-style9 {
