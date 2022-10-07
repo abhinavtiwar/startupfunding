@@ -27,6 +27,7 @@ import StartupDetail from "./components/startup/StartupDetail";
 import ChatStartup from "./components/startup/ChatStartup";
 import { useState } from "react";
 import { UserProvider } from "./context/userContext";
+import ManageServices from "./components/startup/ManageServices";
 function App() {
   
 
@@ -68,7 +69,7 @@ function App() {
                 </StartupAuthorisor>
               }
             />
-            <Route path="startupchat" element={<ChatStartup />} />
+             <Route path="manageservices" element={<ManageServices />} />
           </Route>
 
           <Route element={<Investor />} path="investor">

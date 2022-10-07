@@ -10,7 +10,7 @@ const StartupProfile = () => {
   );
 
   const api_url = app_config.api_url;
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(api_url+'/'+currentUser.thumbnail);
   const [selFile, setSelFile] = useState("");
 
   function handleChange(e) {
@@ -75,7 +75,7 @@ const StartupProfile = () => {
                   sx={{ mt: 4 }}
                   id="title"
                   type="text"
-                  value={values.titlt}
+                  value={values.title}
                   onChange={handleChange}
                 />
                 <TextField

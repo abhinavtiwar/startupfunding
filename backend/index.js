@@ -25,7 +25,8 @@ const investorRouter = require("./routers/investorRouter"); //importing
 const adminRouter = require("./routers/adminRouter"); //importing
 const contactRouter = require("./routers/contactRouter"); //importing
 const utilRouter = require("./routers/util");//importing
- 
+const productRouter = require("./routers/productRouter");//importing
+
 
 const cors = require("cors");  
 
@@ -40,6 +41,7 @@ app.use("/investor", investorRouter);
 app.use("/admin", adminRouter);
 app.use("/contact", contactRouter);
 app.use("/util", utilRouter);
+app.use("/product", productRouter);
 
 app.use(express.static('./static/uploads'))
 
