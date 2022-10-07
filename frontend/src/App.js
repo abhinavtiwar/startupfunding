@@ -74,7 +74,7 @@ function App() {
 
           <Route element={<Investor />} path="investor">
             <Route
-              path="investorProfile"
+              path="investorProfile" 
               element={
                 <InvestorAuthorisor>
                   <InvestorProfile />

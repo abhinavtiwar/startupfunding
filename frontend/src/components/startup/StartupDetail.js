@@ -9,17 +9,12 @@ const StartupDetail = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-<<<<<<< HEAD
-     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
-  const {id} = useParams();
-=======
   const getDataFormBackend = async () => {
     const res = await fetch(`${api_url}/startup/getbyid/${id}`);
     const data = await res.json();
     setStartupDetail(data);
     setLoading(false);
   };
->>>>>>> 59cd80998e60f323c526846cdab60d98bbd25e41
 
   useEffect(() => {
     getDataFormBackend()
