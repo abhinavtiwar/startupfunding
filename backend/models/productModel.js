@@ -5,9 +5,8 @@ const schema = new Schema({
   description: String,
   image: { type: String, default: "" },
   video: { type: String, default: "" },
-  startup:String,
+  startup:{ type: Types.ObjectId, ref: "startup" },
   createdAt: Date,
 });
 
 module.exports = model("services", schema);
-// { type: Types.ObjectId, ref: "startup" }

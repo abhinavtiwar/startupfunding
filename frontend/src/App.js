@@ -27,65 +27,68 @@ import { useState } from "react";
 import { UserProvider } from "./context/userContext";
 import ManageServices from "./components/startup/ManageServices";
 function App() {
+  const [currentStartup, setCurrentStartup] = useState(
+    JSON.parse(sessionStorage.getItem("startup"))
+  );
 
-  const [currentStartup, setCurrentStartup] = useState(JSON.parse(sessionStorage.getItem('startup')));
-
-  const [currentInvestor, setCurrentInvestor] = useState(JSON.parse(sessionStorage.getItem('investor')))
+  const [currentInvestor, setCurrentInvestor] = useState(
+    JSON.parse(sessionStorage.getItem("investor"))
+  );
 
   return (
     <div>
-      <UserProvider startupUser = {currentStartup} investorUser={currentInvestor}>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Navigate to="/main/home" />} path="/" />
-          <Route element={<Main />} path="main">
-            <Route path="Investorlogin" element={<InvestorLogin />} />
-            <Route path="Investorsignup" element={<InvestorSignup />} />
-            <Route path="Startuplogin" element={<StartupLogin />} />
-            <Route path="Startupsignup" element={<StartupSignup />} />
-            <Route path="reset" element={<ResetPassword />} />
-            <Route path="contact" element={<ContactUs />} />
-            <Route path="home" element={<Home />} />
-            <Route path="sdetail/:id" element={<StartupDetail />} />
+      <UserProvider startupUser={currentStartup} investorUser={currentInvestor}>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Navigate to="/main/home" />} path="/" />
+            <Route element={<Main />} path="main">
+              <Route path="Investorlogin" element={<InvestorLogin />} />
+              <Route path="Investorsignup" element={<InvestorSignup />} />
+              <Route path="Startuplogin" element={<StartupLogin />} />
+              <Route path="Startupsignup" element={<StartupSignup />} />
+              <Route path="reset" element={<ResetPassword />} />
+              <Route path="contact" element={<ContactUs />} />
+              <Route path="home" element={<Home />} />
+              <Route path="sdetail/:id" element={<StartupDetail />} />
 
-            <Route path="listing" element={<Listing />} />
-          </Route>
+              <Route path="listing" element={<Listing />} />
+            </Route>
 
-          <Route element={<Admin />} path="admin">
-            <Route path="pofile" element={<AdminProfile />} />
-            <Route path="manageinvestor" element={<ManageInvestor />} />
-            <Route path="managestartup" element={<ManageStartup />} />
-          </Route>
+            <Route element={<Admin />} path="admin">
+              <Route path="pofile" element={<AdminProfile />} />
+              <Route path="manageinvestor" element={<ManageInvestor />} />
+              <Route path="managestartup" element={<ManageStartup />} />
+            </Route>
 
-          <Route element={<Startup />} path="startup">
             <Route
-              path="startupprofile"
               element={
                 <StartupAuthorisor>
-                  <StartupProfile />
+                  <Startup />
                 </StartupAuthorisor>
               }
-            />
-             <Route path="manageservices" element={<ManageServices />} />
-          </Route>
+              path="startup"
+            >
+              <Route path="startupprofile" element={<StartupProfile />} />
+              <Route path="manageservices" element={<ManageServices />} />
+            </Route>
 
-          <Route element={<Investor />} path="investor">
-            <Route
-              path="investorProfile"
-              element={
-                <InvestorAuthorisor>
-                  <InvestorProfile />
-                </InvestorAuthorisor>
-              }
-            />
-          </Route>
+            <Route element={<Investor />} path="investor">
+              <Route
+                path="investorProfile"
+                element={
+                  <InvestorAuthorisor>
+                    <InvestorProfile />
+                  </InvestorAuthorisor>
+                }
+              />
+            </Route>
 
-          {/* ljdshngd */}
-          <Route element={<User />} path="user">
-            <Route path="pofile" element={<UserProfile />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            {/* ljdshngd */}
+            <Route element={<User />} path="user">
+              <Route path="pofile" element={<UserProfile />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </UserProvider>
     </div>
   );
