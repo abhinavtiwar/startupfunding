@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import app_config from "../../config";
 
 const StartupDetail = () => {
@@ -158,7 +158,7 @@ const StartupDetail = () => {
                 </div>
               </div>
             </div>
-
+            <Link to={'/investor/investorupchat/'+startupDetail._id}>Start chat</Link>
             <h4 className="font-size38 sm-font-size32 xs-font-size30 m-5">
               Our New Launch Products
             </h4>

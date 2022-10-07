@@ -69,6 +69,7 @@ function App() {
                 </StartupAuthorisor>
               }
             />
+            <Route path="startupchat" element={<ChatStartup />} />
              <Route path="manageservices" element={<ManageServices />} />
           </Route>
 
@@ -81,7 +82,7 @@ function App() {
                 </InvestorAuthorisor>
               }
             />
-            <Route path="investorupchat" element={<ChatInvestor />} />
+            <Route path="investorupchat/:startupid" element={<ChatInvestor />} />
           </Route>
 
           {/* ljdshngd */}
