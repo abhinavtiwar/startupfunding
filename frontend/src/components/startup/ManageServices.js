@@ -6,6 +6,33 @@ import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 // import UpdateProduct from "./UpdateProduct";
 
 const ManageServices = () => {
+  const api_url = app_config.api_url;
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("startup"))
+  );
+
+  const [file, setFile] = useState(api_url+'/'+currentUser.image);
+  const [video, setVideo] = useState(api_url+'/'+currentUser.video);
+  const [selFile, setSelFile] = useState("");
+  const [selVideo, setSelVideo] = useState("");
+
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+    const file = e.target.files[0];
+    setSelFile(file.name);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("uploaded");
+      }
+    });
+  }
+
   const [productFormData, setproductFormData] = useState(null);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
 
@@ -14,10 +41,11 @@ const ManageServices = () => {
 
   // to track data loading
   const [loading, setLoading] = useState(true);
-  const api_url = app_config.api_url;
+ 
 
   const handleFormSubmit = (product) => {
-    console.log("Product Added");
+    product.image = selFile;
+    product.video= selFile;
     console.log(product);
 
     fetch(`${api_url}/product/add`, {
@@ -126,7 +154,7 @@ const ManageServices = () => {
                   <Formik
                     initialValues={{
                       name: "",
-                      startup: "",
+                      startup: currentUser._id,
                       description: "",
                     }}
                     onSubmit={handleFormSubmit}
@@ -140,16 +168,6 @@ const ManageServices = () => {
                             id="name"
                             onChange={handleChange}
                             value={values.name}
-                            type="text"
-                          />
-                        </div>
-
-                        <div className="form-outline mb-4">
-                          <MDBInput
-                            label="StartUp"
-                            id="startup"
-                            onChange={handleChange}
-                            value={values.startup}
                             type="text"
                           />
                         </div>
