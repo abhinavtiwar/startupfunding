@@ -40,6 +40,11 @@ const Header = () => {
         Investor SignUp
       </NavLink>
     </li>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="/investor/investorupchat">
+        InvestorChat
+      </NavLink>
+    </li>
         </ul>
         {
             investorLoggedin ? 

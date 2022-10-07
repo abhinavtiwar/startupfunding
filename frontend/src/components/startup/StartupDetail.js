@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const StartupDetail = () => {
 
-    // const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
+     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('startup')));
   const {id} = useParams();
 
   
