@@ -18,11 +18,13 @@ import ManageInvestor from "./components/admin/ManageInvestor";
 import ManageStartup from "./components/admin/ManageStartup";
 import StartupProfile from "./components/startup/StartupProfile";
 import InvestorProfile from "./components/investor/InvestorProfile";
+import ChatInvestor from "./components/investor/ChatInvestor";
 import StartupAuthorisor from "./startupAuth";
 import Listing from "./components/main/Listing";
 import Startup from "./components/startup";
 import InvestorAuthorisor from "./investorAuth";
 import StartupDetail from "./components/startup/StartupDetail";
+import ChatStartup from "./components/startup/ChatStartup";
 import { useState } from "react";
 import { UserProvider } from "./context/userContext";
 import ManageServices from "./components/startup/ManageServices";
@@ -30,6 +32,7 @@ function App() {
   const [currentStartup, setCurrentStartup] = useState(
     JSON.parse(sessionStorage.getItem("startup"))
   );
+  
 
   const [currentInvestor, setCurrentInvestor] = useState(
     JSON.parse(sessionStorage.getItem("investor"))

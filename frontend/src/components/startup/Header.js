@@ -35,6 +35,11 @@ const Header = () => {
         Services
       </NavLink>
     </li>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="/startup/startupchat">
+        StartupChat
+      </NavLink>
+    </li>
         </ul>
         {
             startupLoggedin ? 
