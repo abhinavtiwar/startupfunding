@@ -72,19 +72,20 @@ function App() {
               path="startup"
             >
               <Route path="startupprofile" element={<StartupProfile />} />
-              <Route path="manageservices" element={<ManageServices />} />
-            </Route>
+             <Route path="manageservices" element={<ManageServices />} />
+          </Route>
 
-            <Route element={<Investor />} path="investor">
-              <Route
-                path="investorProfile"
-                element={
-                  <InvestorAuthorisor>
-                    <InvestorProfile />
-                  </InvestorAuthorisor>
-                }
-              />
-            </Route>
+          <Route element={<Investor />} path="investor">
+            <Route
+              path="investorProfile" 
+              element={
+                <InvestorAuthorisor>
+                  <InvestorProfile />
+                </InvestorAuthorisor>
+              }
+            />
+            <Route path="investorupchat/:startupid" element={<ChatInvestor />} />
+          </Route>
 
             {/* ljdshngd */}
             <Route element={<User />} path="user">
