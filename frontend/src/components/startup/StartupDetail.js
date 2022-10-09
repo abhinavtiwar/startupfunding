@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { TextField, Button } from "@mui/material";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import app_config from "../../config";
@@ -17,9 +18,8 @@ const StartupDetail = () => {
   };
 
   useEffect(() => {
-    getDataFormBackend()
-  }, [])
-  
+    getDataFormBackend();
+  }, []);
 
   const displayDetails = () => {
     if (!loading) {
@@ -29,7 +29,7 @@ const StartupDetail = () => {
             <div className="col-lg-4 col-md-5 xs-margin-30px-bottom">
               <div className="">
                 <img
-                  src={api_url+'/'+startupDetail.thumbnail}
+                  src={api_url + "/" + startupDetail.thumbnail}
                   alt="xyz"
                   className="img-fluid"
                 />
@@ -158,7 +158,11 @@ const StartupDetail = () => {
                 </div>
               </div>
             </div>
-            <Link to={'/investor/investorupchat/'+startupDetail._id}>Start chat</Link>
+            <Button variant="contained" color="success">
+              <Link to={"/investor/investorupchat/" + startupDetail._id}>
+                Start chat
+              </Link>
+            </Button>
             <h4 className="font-size38 sm-font-size32 xs-font-size30 m-5">
               Our New Launch Products
             </h4>
@@ -227,8 +231,8 @@ const StartupDetail = () => {
           </div>
         </div>
       );
-    }else{
-      return <h1>Loading ...</h1>
+    } else {
+      return <h1>Loading ...</h1>;
     }
   };
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { TextField, Button } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { MDBTextArea } from 'mdb-react-ui-kit';
 import io from "socket.io-client";
 import app_config from "../../config";
 import "./ChatInvestor.css";
@@ -53,23 +55,27 @@ const ChatInvestor = ({}) => {
   }
 
   return (
-    <div className="h-100 bg-light">
+    <div className="h-100 bg-light backgroundouter">
       <div className="container pt-5">
         <h2>Let's Start Chat</h2>
         <div className="card">
           <div className="card-body">
-            <div className="chat-area">
+            <div className="chat-area backgroundinner">
               {displayMessages()}
             </div>
           </div>
           <div className="card-footer">
-            <input
-              className="form-control"
-              onChange={(e) => setText(e.target.value)}
-            />
-            <button className="btn btn-primary" onClick={sendMessage}>
-              Send Message
-            </button>
+          <MDBTextArea label='Message' id='textAreaExample' rows={3} 
+           onChange={(e) => setText(e.target.value)}
+          />
+          <Button 
+                  type="submit"
+                  onClick={sendMessage}
+                  variant="contained"
+                  sx={{ mt: 3}}
+                >
+                  Send Message
+                </Button>
           </div>
         </div>
       </div>
