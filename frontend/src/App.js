@@ -72,6 +72,7 @@ function App() {
               path="startup"
             >
               <Route path="startupprofile" element={<StartupProfile />} />
+              
              <Route path="manageservices" element={<ManageServices />} />
           </Route>
 

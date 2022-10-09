@@ -12,11 +12,11 @@ const ManageServices = () => {
   );
 
   const [file, setFile] = useState(api_url+'/'+currentUser.image);
-  const [video, setVideo] = useState(api_url+'/'+currentUser.video);
   const [selFile, setSelFile] = useState("");
+  const [video, setVideo] = useState(api_url+'/'+currentUser.video);
   const [selVideo, setSelVideo] = useState("");
 
-  function handleChange(e) {
+  function handleImage(e) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
     const file = e.target.files[0];
@@ -28,7 +28,23 @@ const ManageServices = () => {
       body: fd,
     }).then((res) => {
       if (res.status === 200) {
-        console.log("uploaded");
+        console.log("Image uploaded");
+      }
+    });
+  }
+  function handleVideo(e) {
+    console.log(e.target.files);
+    setVideo(URL.createObjectURL(e.target.files[0]));
+    const file = e.target.files[0];
+    setSelVideo(file.name);
+    const fd = new FormData();
+    fd.append("myfile", video);
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("Video uploaded");
       }
     });
   }
@@ -45,7 +61,7 @@ const ManageServices = () => {
 
   const handleFormSubmit = (product) => {
     product.image = selFile;
-    product.video= selFile;
+    product.video= selVideo;
     console.log(product);
 
     fetch(`${api_url}/product/add`, {
@@ -138,7 +154,7 @@ const ManageServices = () => {
 
   return (
     <div>
-      <div className="row">
+      <div className="row mb-5">
         <section className="vh-100">
           <div className="container py-5 h-100">
             <div className="row d-flex align-items-center justify-content-center h-100">
@@ -151,6 +167,12 @@ const ManageServices = () => {
               </div>
               <div className="card col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                 <div className="card-body">
+                <img style={{ height: "200px", width: "480px" }} src={file} />
+                <input type="file" onChange={handleImage} />
+                <video width="480" height="200" controls >
+                <source src={video} type="video/mp4"/>
+                </video>
+                <input type="file" onChange={handleVideo} />
                   <Formik
                     initialValues={{
                       name: "",
@@ -197,7 +219,7 @@ const ManageServices = () => {
         </section>
       </div>
       <div className="container-fluid mt-5 w-75">
-        <div class="row">
+        <div class="row mt-5">
           <div className="col-md">
             <h3 className="text-center m-2">PRODUCT LIST</h3>
             <table className="table table-secondary">
