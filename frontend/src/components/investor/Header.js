@@ -41,7 +41,7 @@ const Header = () => {
       </NavLink>
     </li>
     <li className="nav-item">
-      <NavLink className="nav-link" to="/investor/investorupchat">
+      <NavLink className="nav-link" to="/investor/investorchat">
         InvestorChat
       </NavLink>
     </li>
