@@ -1,9 +1,9 @@
 import React ,{useContext}from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink ,useNavigate} from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 
 const Header = () => {
-  
+  const navigate = useNavigate();
   const { startupLoggedin, setStartupLoggedin } = useContext(UserContext);
 
   return (
@@ -31,6 +31,11 @@ const Header = () => {
         </NavLink>
       </li>
     <li className="nav-item">
+      <NavLink className="nav-link" to="/startup/manageservices">
+        Services
+      </NavLink>
+    </li>
+    <li className="nav-item">
       <NavLink className="nav-link" to="/startup/startupchat">
         StartupChat
       </NavLink>
@@ -41,7 +46,7 @@ const Header = () => {
             <button className='btn btn-primary' onClick={e => {
               setStartupLoggedin(false);
               sessionStorage.removeItem('startup');
-              // navigate
+              navigate("/main/startuplogin")
             }}> Logout</button>
             :
             <Link className="btn btn-link" to="/main/startuplogin">Startup Login</Link>

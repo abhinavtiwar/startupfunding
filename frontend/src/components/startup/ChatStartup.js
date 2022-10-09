@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./ChatStartup.css";
 import io from "socket.io-client";
 import { TextField, Button } from "@mui/material";
 import { useParams } from "react-router-dom";
@@ -7,27 +8,14 @@ import app_config from "../../config";
 import "./ChatStartup.css";
 
 const ChatStartup = () => {
-  const api_url = app_config.api_url;
-  const [socket, setSocket] = useState(io(api_url , { autoConnect: false }));
+ const url = "http://localhost:5000";
+  const [socket, setSocket] = useState(io(url, { autoConnect: false }));
   const [text, setText] = useState("");
-  const [investorDetail, setStartupDetail] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const {startupid} = useParams();
-
-  const getDataFormBackend = async () => {
-    const res = await fetch(`${api_url}/startup/getbyid/${startupid}`);
-    const data = await res.json();
-    console.log(data);
-    setStartupDetail(data);
-    setLoading(false);
-  };
-  useEffect(() => {
-    getDataFormBackend()
-  }, [])
 
   const [messageList, setMessageList] = useState([
-    
-      ]);
+    {text : 'hello', sent:true, created: new Date(), name: 'User 1'},
+    {text : 'Hi', sent:false, created: new Date(), name: 'User 2'}
+  ]);
 
   useEffect(() => {
     socket.connect();
@@ -39,18 +27,37 @@ const ChatStartup = () => {
   })
 
   const sendMessage = () => {
-    let obj = {text : text, sent : true, }
+    let obj = {text : text, sent : true}
     socket.emit("sendmsg", obj);
     setMessageList([ ...messageList, obj ]);
   };
 
   const displayMessages = () => {
-    return messageList.map( ({ text, sent }) => (
-      <div className="msg-body">
-        <p className={"msg-text "+( sent ? 'msg-sent' : 'msg-rec' )}>
-          {text}
-        </p>
-      </div>
+    return messageList.map( ({ text, sent, name }) => (
+      <li className={"d-flex justify-content-between mb-4 "+(sent ? 'flex-row-reverse' : '')}>
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+              alt="avatar"
+              className="rounded-circle d-flex align-self-start me-3 shadow-1-strong"
+              width={60}
+            />
+            <div className="card mask-custom">
+              <div
+                className="card-header d-flex justify-content-between p-3"
+                style={{ borderBottom: "1px solid rgba(255,255,255,.3)" }}
+              >
+                <p className="fw-bold mb-0">{name}</p>
+                <p className="text-light small mb-0">
+                  <i className="far fa-clock" /> 12 mins ago
+                </p>
+              </div>
+              <div className="card-body">
+                <p className="mb-0">
+                  {text}
+                </p>
+              </div>
+            </div>
+          </li>
     ) )
   }
 
@@ -84,4 +91,4 @@ const ChatStartup = () => {
   );
 };
 
-export default ChatStartup;
+export default ChatStartup

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { TextField, Button } from "@mui/material";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import app_config from "../../config";
 
 const StartupDetail = () => {

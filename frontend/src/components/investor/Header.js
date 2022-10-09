@@ -1,9 +1,9 @@
 import React,{useContext} from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 
 const Header = () => {
-
+  const navigate = useNavigate();
   const {investorLoggedin,setInvestorLoggedin} = useContext(UserContext);
 
   return (
@@ -30,16 +30,7 @@ const Header = () => {
           Home
         </NavLink>
       </li>
-      <li className="nav-item">
-      <NavLink className="nav-link" to="/main/Investorlogin">
-        Investor Login
-      </NavLink>
-    </li>
-    <li className="nav-item">
-      <NavLink className="nav-link" to="/main/InvestorSignup">
-        Investor SignUp
-      </NavLink>
-    </li>
+     
     <li className="nav-item">
       <NavLink className="nav-link" to="/investor/investorchat">
         InvestorChat
@@ -51,7 +42,7 @@ const Header = () => {
             <button className='btn btn-primary' onClick={e => {
               setInvestorLoggedin(false);
               sessionStorage.removeItem('investor');
-              // navigate
+              navigate("/main/Investorlogin")
             }}> Logout</button>
             :
             <Link className="btn btn-link" to="/main/Investorlogin">Investor Login</Link>
