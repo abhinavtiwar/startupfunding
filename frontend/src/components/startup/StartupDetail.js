@@ -5,9 +5,14 @@ import app_config from "../../config";
 
 const StartupDetail = () => {
   const api_url = app_config.api_url;
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("startup"))
+  );
   const [startupDetail, setStartupDetail] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  const [productList, setProductList] = useState([]);
+  const [productLoading, setProductLoading] = useState(true);
 
   const getDataFormBackend = async () => {
     const res = await fetch(`${api_url}/startup/getbyid/${id}`);
@@ -16,10 +21,43 @@ const StartupDetail = () => {
     setLoading(false);
   };
 
+  const fetchProducts = () => {
+    fetch(`${api_url}/product/getbystartup${currentUser._id}`).then((res) => {
+      if (res.status === 200) {
+        console.log("data fetched");
+        res.json().then((data) => {
+          console.log(data);
+          setProductList(data);
+          setProductLoading(false);
+        });
+      }
+    });
+  }
+
   useEffect(() => {
     getDataFormBackend()
+    fetchProducts()
   }, [])
   
+
+  const displayProduct = () => {
+    if (!productLoading) {
+      return productList.map(({ _id, name, startup, description,image, video }) => (
+        <div className="card bg-c-yellow order-card">
+                      <div className="card-block">
+                        <h6 className="m-b-20">{productList.name}</h6>
+                        <h2 className="text-right">
+                          <i className="fa fa-refresh f-left" />
+                          <span>486</span>
+                        </h2>
+                        <p className="m-b-0">
+                          {productList.startup}<span className="f-right">anything</span>
+                        </p>
+                      </div>
+                    </div>
+      ));
+    }
+  };
 
   const displayDetails = () => {
     if (!loading) {
@@ -232,7 +270,9 @@ const StartupDetail = () => {
     }
   };
 
-  return <div className="mt-1">{displayDetails()}</div>;
+  return <div className="mt-1">{displayDetails()}
+  <div>{displayProduct()}</div>
+  </div>;
 };
 
 export default StartupDetail;

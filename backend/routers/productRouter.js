@@ -55,6 +55,18 @@ router.get("/getbyid/:id", (req, res) => {
     });
 });
 
+router.get("/getbystartup/:id", (req, res) => {
+  Model.find({startup : req.params.id})
+    .then((result) => {
+      console.log(result);
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.json(err);
+    });
+});
+
 
 
 router.put("/update/:id", (req, res) => {
