@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./ChatStartup.css";
 import io from "socket.io-client";
-
+import { TextField, Button } from "@mui/material";
+import { useParams } from "react-router-dom";
+import { MDBTextArea } from 'mdb-react-ui-kit';
+import app_config from "../../config";
+import "./ChatStartup.css";
 
 const ChatStartup = () => {
  const url = "http://localhost:5000";
@@ -58,38 +62,33 @@ const ChatStartup = () => {
   }
 
   return (
-    <section className="gradient-custom">
-  <div className="container py-5">
-    <div className="chat-area">
-    <ul className="list-unstyled text-white">
-          {displayMessages()}
-          <li className="mb-3">
-            <div className="form-outline form-white">
-              <textarea
-                className="form-control"
-                id="textAreaExample3"
-                rows={4}
-                defaultValue={""}
-             
-                onChange={(e) => setText(e.target.value)} />
-              <label className="form-label" htmlFor="textAreaExample3">
-                Message
-              </label>
+    <div className="h-100 bg-light backgroundouter">
+      <div className="container pt-5">
+        <h2>Let's Start Chat</h2>
+        <div className="card"  style={{backgroundColor:"#cfead9"}}>
+          <div className="card-body">
+            <div className="chat-area backgroundinner">
+              {displayMessages()}
             </div>
-          </li>
-          <button
-            type="button"
-            className="btn btn-light btn-lg btn-rounded float-end"
-          
-            onClick={sendMessage}  >
-            Send
-          </button>
-        </ul>
+          </div>
+          <div className="card-footer">
+          <MDBTextArea label='Message' id='textAreaExample' rows={3} 
+           onChange={(e) => setText(e.target.value)}
+          />
+          <Button
+                  type="submit"
+                  onClick={sendMessage}
+                  variant="contained"
+                  sx={{ mt: 3}}
+                >
+                  Send Message
+                </Button>
+            
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-  )
-}
+  );
+};
 
 export default ChatStartup
